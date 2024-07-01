@@ -18,8 +18,14 @@
     --mainDarkGreen: #036E37;
     --mainBlue: #07BFD1;
     --mainOffWhite: #FBF5F3;
-    --mainDarkGreen: #036E37;
+
     --mainDarkGray: #252323;
+
+    --logoGreen: #15c55d;
+    --logoBlue: #0485b9;
+
+    --buttonGreen: #1ed94f;
+    --buttonBlue: #33c9ff;
 
     --pink: #F433AB;
     --pinkPurple: #CB04A5;
@@ -73,15 +79,20 @@ header {
 
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
 
     padding: 16px;
 }
 
 header .leftSection {
+    height: 100%;
+    width: 20%;
+
     display: flex;
     justify-content: flex-start;
-    align-content: center;
+    align-items: center;
+
+    padding-left: 16px;
 }
 
 header .leftSection h3 {
@@ -89,6 +100,85 @@ header .leftSection h3 {
     font-weight: 400;
     font-size: var(--size6);
     color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    cursor: pointer;
+}
+
+header .middleSection {
+    height: 100%;
+    width: 60%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .middleSection h3 {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    margin-right: 32px;
+
+    cursor: pointer;
+
+    transition: 0.1s ease-in;
+}
+
+header .middleSection h3:hover {
+    color: var(--pink);
+    margin-right: 40px;
+    margin-left: 8px;
+}
+
+header .rightSection {
+    height: 100%;
+    width: 20%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+
+    padding-right: 16px;
+}
+
+header .rightSection .getStartedButton {
+    height: auto;
+    width: auto;
+    padding: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    background: linear-gradient(45deg, var(--buttonGreen), var(--buttonBlue));
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainBlack);
+
     font-family: Inconsolata;
     font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
@@ -98,6 +188,8 @@ header .leftSection h3 {
 }
 
 
+
+
 main .hero {
     position: relative;
 
@@ -105,4 +197,20 @@ main .hero {
     height: 100vh;
 
     background: var(--mainBlack);
+}
+
+footer {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+
+    background-color: var(--mainBlack);
+}
+
+footer .horizontalRule {
+    position: relative;
+    height: 2px;
+    width: 100%;
+
+    background: var(--mainOffWhite);
 }
