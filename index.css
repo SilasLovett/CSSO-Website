@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    /*sharpening*/
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: normal;
+}
+
+:root {
+    --mainDarkBlue: #00001E;
+    --mainDarkGreen: #036E37;
+    --mainBlue: #07BFD1;
+    --mainOffWhite: #FBF5F3;
+    --mainDarkGreen: #036E37;
+    --mainDarkGray: #252323;
+
+    --pink: #F433AB;
+    --pinkPurple: #CB04A5;
+    --mainBlack: #000807;
+
+    --sizeBasic: 1em;
+    --size0: 0.1082em;
+    --size1: 0.1751em;
+    --size2: 0.2833em;
+    --size3: 0.4584em;
+    --size4: 0.7417em;
+    --size5: 1.2000em;
+    --size6: 1.9416em;
+    --size7: 3.1415em;
+    --size8: 5.0830em;
+    --size9: 8.2243em;
+    --size10: 13.3072em;
+}
+
+/*
+This is to remove the password reveal button I think.
+::-ms-reveal {
+    filter: invert(100%);
+}
+*/
+
+.noSelect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    height: 80px;
+    width: 100%;
+    
+    background: var(--mainBlack);
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
+    padding: 16px;
+}
+
+header .leftSection {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+header .leftSection h3 {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--size6);
+    color: var(--mainOffWhite);
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+}
+
+
+main .hero {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    background: var(--mainBlack);
+}
