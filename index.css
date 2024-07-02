@@ -14,13 +14,12 @@
 }
 
 :root {
+    --mainBlack: #000807;
     --mainDarkBlue: #00001E;
-    --mainDarkGreen: #036E37;
-    --mainBlue: #07BFD1;
+
     --mainOffWhite: #FBF5F3;
 
     --mainLightGray: #c9c4c3;
-
     --mainDarkGray: #252323;
 
     --logoGreen: #15c55d;
@@ -31,7 +30,8 @@
 
     --pink: #F433AB;
     --pinkPurple: #CB04A5;
-    --mainBlack: #000807;
+    --darkGreen: #036E37;
+    --randomBlue: #07BFD1;
 
     --sizeBasic: 1em;
     --size0: 0.1082em;
@@ -148,6 +148,68 @@ This is to remove the password reveal button I think.
 
 
 
+.basicWhiteText {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+}
+
+.basicGrayText {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--size5);
+    color: var(--mainLightGray);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+}
+
+.titleWhiteText {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--size6);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+}
+
+.titleGrayText {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--size6);
+    color: var(--mainLightGray);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
 
 header {
     position: fixed;
@@ -178,18 +240,6 @@ header .leftSection {
 }
 
 header .leftSection h3 {
-    text-decoration: none;
-    font-weight: 400;
-    font-size: var(--size6);
-    color: var(--mainOffWhite);
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
-
     cursor: pointer;
 }
 
@@ -311,19 +361,7 @@ main .hero .rightSection h1 {
 }
 
 main .hero .rightSection p {
-    text-decoration: none;
-    font-weight: 400;
-    font-size: var(--size5);
-    color: var(--mainOffWhite);
-
     width: 75%;
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
 
     padding-left: 8px;
 
@@ -383,14 +421,71 @@ main .cardSection .card {
     align-items: center;
 }
 
-main .cardSection .card img {
+main .cardSection .card .imageHolder {
     position: relative;
 
     height: 60%;
     width: 100%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .cardSection .card .imageHolder img {
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+
     object-fit: cover;
     overflow: hidden;
+}
+
+main .cardSection .card .imageHolder .imageButton {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+
+    height: auto;
+    width: auto;
+
+    background-color: var(--mainBlack);
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    transition: 0.1s ease-in;
+}
+
+main .cardSection .card .imageHolder .imageButton:hover {
+    transform: scale(1.03);
+}
+
+main .cardSection .card .imageHolder .imageButton h4 {
+    margin-right: 16px;
+
+    pointer-events: none;
+}
+
+main .cardSection .card .imageHolder .imageButton img {
+    position: relative;
+    height: 32px;
+    width: 32px;
+
+    transform: rotate(180deg);
+
+    object-fit: fill;
+
+    pointer-events: none;
 }
 
 main .cardSection .card .cardInformation {
@@ -408,34 +503,11 @@ main .cardSection .card .cardInformation {
 }
 
 main .cardSection .card .cardInformation h2 {
-    text-decoration: none;
-    font-weight: 400;
-    font-size: var(--size6);
-    color: var(--mainOffWhite);
-    
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
-
     margin-bottom: 0.3em;
 }
 
 main .cardSection .card .cardInformation h3 {
-    text-decoration: none;
     font-weight: 500;
-    font-size: var(--size5);
-    color: var(--mainLightGray);
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
 }
 
 
@@ -494,41 +566,17 @@ footer .topSection .footerColumn {
 }
 
 footer .topSection .footerColumn h2 {
-    text-decoration: none;
     font-weight: 500;
-    font-size: var(--size5);
-    color: var(--mainOffWhite);
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
 
     margin-right: 32px;
-
-    cursor: pointer;
 
     padding-bottom: 0.7em;
 }
 
 footer .topSection .footerColumn h3 {
-    text-decoration: none;
     font-weight: 300;
-    font-size: var(--size5);
-    color: var(--mainLightGray);
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
 
     margin-right: 32px;
-
-    cursor: pointer;
 
     transition: 0.1s ease-in;
 
@@ -555,22 +603,7 @@ footer .topSection .footerColumn2 {
 }
 
 footer .topSection .footerColumn2 h2 {
-    text-decoration: none;
-    font-weight: 400;
-    font-size: var(--size6);
-    color: var(--mainOffWhite);
-    
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
-
     margin-right: 32px;
-
-    cursor: pointer;
 
     padding-bottom: 0.7em;
 }
@@ -602,19 +635,7 @@ footer .bottomSection .leftSection {
 }
 
 footer .bottomSection .leftSection h2 {
-    text-decoration: none;
     font-weight: 500;
-    font-size: var(--size5);
-    color: var(--mainLightGray);
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
-
-    cursor: pointer;
 }
 
 footer .bottomSection .rightSection {
