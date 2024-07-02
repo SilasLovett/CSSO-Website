@@ -19,6 +19,8 @@
     --mainBlue: #07BFD1;
     --mainOffWhite: #FBF5F3;
 
+    --mainLightGray: #c9c4c3;
+
     --mainDarkGray: #252323;
 
     --logoGreen: #15c55d;
@@ -66,6 +68,86 @@ This is to remove the password reveal button I think.
     user-select: none;
     /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
+
+
+
+
+
+
+.getStartedButton {
+    height: auto;
+    width: auto;
+    padding: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+
+    background: linear-gradient(45deg, var(--buttonGreen), var(--buttonBlue));
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainBlack);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+}
+
+.whiteButton {
+    height: auto;
+    width: auto;
+    padding: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    border: 2px solid var(--mainOffWhite);
+    outline: none;
+
+    cursor: pointer;
+
+    background: none;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    transition: 0.1s ease-in;
+}
+
+.whiteButton:hover {
+    background-color: var(--mainOffWhite);
+    color: var(--mainBlack);
+}
+
+
+
+
+
+
+
+
 
 header {
     position: fixed;
@@ -157,36 +239,6 @@ header .rightSection {
     padding-right: 16px;
 }
 
-header .rightSection .getStartedButton {
-    height: auto;
-    width: auto;
-    padding: 16px;
-    padding-left: 32px;
-    padding-right: 32px;
-
-    border: none;
-    outline: none;
-
-    cursor: pointer;
-
-    background: linear-gradient(45deg, var(--buttonGreen), var(--buttonBlue));
-
-    border-radius: 10px;
-
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    font-size: var(--size5);
-    color: var(--mainBlack);
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
-}
-
 
 
 
@@ -203,11 +255,30 @@ main .hero {
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
+main .hero .splineSection {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
 main .hero .leftSection {
+    position: relative;
+
+    height: 100%;
+    width: 60%;
+
+    pointer-events: none;
+}
+
+main .hero .rightSection {
     position: relative;
 
     height: 100%;
@@ -219,9 +290,11 @@ main .hero .leftSection {
     align-items: flex-start;
 
     padding: 64px;
+
+    pointer-events: none;
 }
 
-main .hero .leftSection h1 {
+main .hero .rightSection h1 {
     text-decoration: none;
     font-weight: 400;
     font-size: var(--size8);
@@ -237,7 +310,7 @@ main .hero .leftSection h1 {
     margin-bottom: 0.4em;
 }
 
-main .hero .leftSection p {
+main .hero .rightSection p {
     text-decoration: none;
     font-weight: 400;
     font-size: var(--size5);
@@ -255,15 +328,23 @@ main .hero .leftSection p {
     padding-left: 8px;
 
     line-height: 1.5em;
+
+    margin-bottom: 1em;
 }
 
-
-
-main .hero .rightSection {
+main .hero .rightSection .buttons {
     position: relative;
+    height: auto;
+    width: 100%;
 
-    height: 100%;
-    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main .hero .rightSection .buttons button {
+    pointer-events: all;
 }
 
 
@@ -276,16 +357,181 @@ main .hero .rightSection {
 
 footer {
     position: relative;
-    height: 50vh;
+    height: 60vh;
     width: 100%;
 
     background-color: var(--mainBlack);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer .horizontalRule {
     position: relative;
-    height: 2px;
+    height: 1px;
     width: 100%;
 
-    background: var(--mainOffWhite);
+    background: var(--mainLightGray);
+}
+
+footer .topSection {
+    position: relative;
+    width: 100%;
+    height: 75%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    padding: 32px;
+}
+
+footer .topSection .footerColumn {
+    position: relative;
+    width: 15%;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin-right: 32px;
+}
+
+footer .topSection .footerColumn h2 {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    margin-right: 32px;
+
+    cursor: pointer;
+
+    padding-bottom: 0.7em;
+}
+
+footer .topSection .footerColumn h3 {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: var(--size5);
+    color: var(--mainLightGray);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    margin-right: 32px;
+
+    cursor: pointer;
+
+    transition: 0.1s ease-in;
+
+    padding-bottom: 0.4em;
+
+    cursor: pointer;
+}
+
+footer .topSection .footerColumn h3:hover {
+    color: var(--mainOffWhite);
+}
+
+footer .topSection .footerColumn2 {
+    position: relative;
+    width: 15%;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    margin-right: 32px;
+}
+
+footer .topSection .footerColumn2 h2 {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--size6);
+    color: var(--mainOffWhite);
+    
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    margin-right: 32px;
+
+    cursor: pointer;
+
+    padding-bottom: 0.7em;
+}
+
+
+
+footer .bottomSection {
+    position: relative;
+    width: 100%;
+    height: 25%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .bottomSection .leftSection {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 16px;
+    padding-left: 64px;
+}
+
+footer .bottomSection .leftSection h2 {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--size5);
+    color: var(--mainLightGray);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    cursor: pointer;
+}
+
+footer .bottomSection .rightSection {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 }
