@@ -75,6 +75,8 @@ This is to remove the password reveal button I think.
 
 
 .getStartedButton {
+    position: relative;
+
     height: auto;
     width: auto;
     padding: 16px;
@@ -102,7 +104,35 @@ This is to remove the password reveal button I think.
     font-style: normal;
 
     vertical-align: middle;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.1s ease-in;
 }
+
+.getStartedButton:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    box-shadow: 0.25em -0.25em 1em 0 var(--buttonBlue), -0.25em 0.25em 1em 0 var(--buttonGreen);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.getStartedButton:hover::after {
+    opacity: 0.75;
+}
+
+.getStartedButton:hover {
+    color: var(--mainOffWhite);
+}
+
 
 .whiteButton {
     height: auto;
@@ -155,7 +185,7 @@ This is to remove the password reveal button I think.
     color: var(--mainOffWhite);
 
     font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
+    font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 
@@ -168,8 +198,7 @@ This is to remove the password reveal button I think.
     font-size: var(--size5);
     color: var(--mainLightGray);
 
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
+    font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 
@@ -419,6 +448,11 @@ main .cardSection .card {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    transition: 0.1s ease-in;
+}
+
+main .cardSection .card:hover {
+    transform: scale(1.03);
 }
 
 main .cardSection .card .imageHolder {
@@ -562,7 +596,7 @@ footer .topSection .footerColumn {
     justify-content: flex-start;
     align-items: flex-start;
 
-    margin-right: 32px;
+    margin-right: 16px;
 }
 
 footer .topSection .footerColumn h2 {
@@ -598,8 +632,6 @@ footer .topSection .footerColumn2 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-
-    margin-right: 32px;
 }
 
 footer .topSection .footerColumn2 h2 {
