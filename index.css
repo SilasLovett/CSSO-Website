@@ -337,6 +337,7 @@ header .rightSection {
 
 
 main {
+    position: relative;
     background: var(--mainBlack);
 }
 
@@ -503,6 +504,103 @@ main .descriptionSection .descriptionImage img {
 
     border-radius: 10px;
 }
+
+
+
+
+
+main .scrollerSection {
+    width: 100%;
+    height: 50vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    padding: 32px;
+}
+
+main .scrollerSection:hover .scroller {
+    animation-play-state: paused;
+}
+
+main .scrollerSection .scroller {
+    height: 100%;
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+
+    animation: 20s slideCard infinite linear;
+}
+
+@keyframes slideCard {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+main .scrollerSection .scroller .scrollingCard {
+    height: 100%;
+    aspect-ratio: 1/1.4;
+
+    background-color: var(--mainDarkGray);
+
+    border-radius: 10px;
+
+    margin-right: 32px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    white-space: wrap;
+}
+
+main .scrollerSection .scroller .scrollingCard .imageSection {
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .scrollerSection .scroller .scrollingCard .imageSection img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+main .scrollerSection .scroller .scrollingCard .detailsSection {
+    position: relative;
+
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 16px;
+}
+
+main .scrollerSection .scroller .scrollingCard .detailsSection h2 {
+    margin-bottom: 0.5em;
+}
+
+
 
 
 
