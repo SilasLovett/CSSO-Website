@@ -249,6 +249,29 @@ This is to remove the password reveal button I think.
 
 
 
+@supports(scrollbar-color: var(--mainOffWhite) var(--mainDarkGray)) {
+    * {
+        scrollbar-color: var(--mainOffWhite) var(--mainDarkGray);
+        scrollbar-width: thin;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--mainDarkGray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--mainOffWhite);
+    border-radius: 10px;
+}
+
+
+
+
 
 
 
@@ -473,6 +496,8 @@ main .descriptionSection .descriptionContent {
     margin-right: 64px;
 
     padding-top: 16px;
+
+    opacity: 1;
 }
 
 main .descriptionSection .descriptionContent h2 {
@@ -503,11 +528,7 @@ main .descriptionSection .descriptionImage img {
     height: 100%;
     width: auto;
 
-    object-fit: fill;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    object-fit: cover;
 
     border-radius: 10px;
 }
