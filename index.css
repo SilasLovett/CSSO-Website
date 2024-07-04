@@ -339,6 +339,13 @@ header .rightSection {
 main {
     position: relative;
     background: var(--mainBlack);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    overflow: hidden;
 }
 
 main .hero {
@@ -511,8 +518,8 @@ main .descriptionSection .descriptionImage img {
 main .gridSection {
     position: relative;
 
-    height: 85vh;
-    width: 100%;
+    height: 800px;
+    width: 1800px;
 
     margin-top: 64px;
     margin-bottom: 64px;
@@ -538,6 +545,8 @@ main .gridSection {
     padding: 16px;
 
     overflow: hidden;
+
+    min-width: 0;
 }
 
 .gridItem1 {
@@ -596,6 +605,11 @@ main .gridSection {
 
 .gridItem11 {
     grid-area: k;
+}
+
+.gridItem12 {
+    display: none;
+    grid-area: l;
 }
 
 .bentoImageHorizontal {
@@ -1000,4 +1014,153 @@ footer .bottomSection .rightSection {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+}
+
+@media (max-width: 1832px) {
+    main .gridSection {
+        position: relative;
+    
+        height: 1000px;
+        width: 1500px;
+    
+        margin-top: 64px;
+        margin-bottom: 64px;
+    
+        display: grid;
+    
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+            "a k b b b"
+            "d k b b b"
+            "e e g g g"
+            "e e f f f"
+            "i i c c h"
+            "j j c c h";
+    
+        grid-gap: 32px;
+    
+        padding: 64px;
+    }
+}
+
+@media (max-width: 1532px) {
+    main .gridSection {
+        position: relative;
+    
+        height: 1200px;
+        width: 1200px;
+    
+        margin-top: 64px;
+        margin-bottom: 64px;
+    
+        display: grid;
+    
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas: 
+            "a k b b b"
+            "d k b b b"
+            "e e g g g"
+            "e e f f f"
+            "i i c c h"
+            "j j c c h";
+    
+        grid-gap: 32px;
+    
+        padding: 64px;
+    }
+}
+
+@media (max-width: 1232px) {
+    main .gridSection {
+        position: relative;
+    
+        height: 1400px;
+        width: 1000px;
+    
+        margin-top: 64px;
+        margin-bottom: 64px;
+    
+        display: grid;
+    
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas: 
+            "a b b b"
+            "d b b b"
+            "e e k h"
+            "e e k h"
+            "i i c c"
+            "j j c c"
+            "g g f f";
+    
+        grid-gap: 32px;
+    
+        padding: 64px;
+    }
+}
+
+@media (max-width: 1032px) {
+    main .gridSection {
+        position: relative;
+    
+        height: 1500px;
+        width: 900px;
+    
+        margin-top: 64px;
+        margin-bottom: 64px;
+    
+        display: grid;
+    
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-areas: 
+            "b b b"
+            "b b b"
+            "a g g"
+            "e e k"
+            "e e k"
+            "f f d"
+            "c c c"
+            "c c c"
+            "i i h"
+            "j j h";
+    
+        grid-gap: 32px;
+    
+        padding: 64px;
+    }
+}
+
+@media (max-width: 932px) {
+    main .gridSection {
+        position: relative;
+    
+        height: 1500px;
+        width: 600px;
+    
+        margin-top: 64px;
+        margin-bottom: 64px;
+    
+        display: grid;
+    
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-areas: 
+            "b b b"
+            "b b b"
+            "a g g"
+            "e e k"
+            "e e k"
+            "f f d"
+            "c c c"
+            "c c c"
+            "i i h"
+            "j j h";
+    
+        grid-gap: 32px;
+    
+        padding: 64px;
+    }
 }
