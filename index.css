@@ -221,9 +221,22 @@ This is to remove the password reveal button I think.
 
 .titleGrayText {
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     font-size: var(--size6);
     color: var(--mainLightGray);
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+}
+
+.largeWhiteText {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--size7);
+    color: var(--mainOffWhite);
 
     font-family: Inconsolata;
     font-family: "Inconsolata", monospace;
@@ -323,6 +336,9 @@ header .rightSection {
 
 
 
+main {
+    background: var(--mainBlack);
+}
 
 main .hero {
     position: relative;
@@ -414,6 +430,79 @@ main .hero .rightSection .buttons button {
     pointer-events: all;
 }
 
+
+
+
+
+
+main .descriptionSection {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    background: var(--mainBlack);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    margin-top: 128px;
+    margin-bottom: 128px;
+}
+
+main .descriptionSection .descriptionContent {
+    position: relative;
+    height: 90%;
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+    margin-right: 64px;
+
+    padding-top: 16px;
+}
+
+main .descriptionSection .descriptionContent h2 {
+    margin-bottom: 0.5em;
+}
+
+main .descriptionSection .descriptionContent p {
+    width: 75%;
+    margin-bottom: 1em;
+}
+
+main .descriptionSection .descriptionContent button {
+    margin-top: 1em;
+}
+
+main .descriptionSection .descriptionImage {
+    position: relative;
+    height: 90%;
+    width: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .descriptionSection .descriptionImage img {
+    position: relative;
+    height: 100%;
+    width: auto;
+
+    object-fit: fill;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+}
 
 
 
