@@ -33,6 +33,8 @@
     --darkGreen: #036E37;
     --randomBlue: #07BFD1;
 
+    --red: #ce2323;
+
     --sizeBasic: 1em;
     --size0: 0.1082em;
     --size1: 0.1751em;
@@ -172,6 +174,82 @@ This is to remove the password reveal button I think.
 }
 
 
+.smallWhiteButton {
+    height: auto;
+    width: auto;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    border: 2px solid var(--red);
+    outline: none;
+
+    cursor: pointer;
+
+    background: none;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    transition: 0.1s ease-in;
+}
+
+.smallWhiteButton:hover {
+    background-color: var(--red);
+    color: var(--mainOffWhite);
+}
+
+
+.smallRedButton {
+    height: auto;
+    width: auto;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    border: 2px solid var(--);
+    outline: none;
+
+    cursor: pointer;
+
+    background: none;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    transition: 0.1s ease-in;
+}
+
+.smallRedButton:hover {
+    background-color: var(--mainOffWhite);
+    color: var(--mainBlack);
+}
+
+
 
 
 
@@ -184,7 +262,6 @@ This is to remove the password reveal button I think.
     font-size: var(--size5);
     color: var(--mainOffWhite);
 
-    font-family: Inconsolata;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -211,8 +288,7 @@ This is to remove the password reveal button I think.
     font-size: var(--size6);
     color: var(--mainOffWhite);
 
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
+    font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 
@@ -238,8 +314,7 @@ This is to remove the password reveal button I think.
     font-size: var(--size7);
     color: var(--mainOffWhite);
 
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
+    font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
 
@@ -685,7 +760,7 @@ main .cssSection {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 main .cssSection .cssLeftSection {
@@ -707,6 +782,8 @@ main .cssLeftSection .cssText {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+
+    margin-top: 8px;
 }
 
 main .cssLeftSection .cssText h2 {
@@ -721,20 +798,16 @@ main .cssLeftSection .cssButtonBox {
     height: fit-content;
     width: 90%;
 
-    background-color: var(--mainDarkGray);
-
     border-radius: 10px;
 
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
-    padding: 32px;
 }
 
 main .cssLeftSection .cssButtonBox button {
-    height: 80px;
-    width: 320px;
+    height: 60px;
+    width: 180px;
 
     border-radius: 10px;
 
@@ -772,13 +845,111 @@ main .cssSection .cssRightSection {
 ;
 }
 
+main .cssRightSection .cssEditorHeader {
+    height: 64px;
+    width: 90%;
+
+    background: none;
+    border: 2px solid var(--mainOffWhite);
+
+    border-radius: 10px;
+
+    margin-bottom: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px;
+}
+
+main .cssRightSection .cssEditorHeader .cssHeaderLeft {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main .cssRightSection .cssEditorHeader .cssHeaderRight {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 main .cssRightSection .textEditor {
-    height: 330px;
+    height: auto;
     width: 90%;
 
     border-radius: 10px;
 
-    background-color: var(--mainDarkGray);
+    background: none;
+
+    border: 2px solid var(--mainOffWhite);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 16px;
+}
+
+main .cssRightSection .cssLine {
+    width: auto;
+    height: auto;
+
+    margin-top: 4px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main .cssRightSection .textEditor .cssLine h3 {
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+main .cssRightSection .cssLine input {
+    background: none;
+
+    width: 100px;
+
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    padding-left: 4px;
+    padding-right: 4px;
+
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+
+    border: 2px solid var(--mainOffWhite);
+    outline: none;
+
+    border-radius: 10px;
+
 }
 
 
