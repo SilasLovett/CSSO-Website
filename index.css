@@ -249,29 +249,6 @@ This is to remove the password reveal button I think.
 
 
 
-@supports(scrollbar-color: var(--mainOffWhite) var(--mainDarkGray)) {
-    * {
-        scrollbar-color: var(--mainOffWhite) var(--mainDarkGray);
-        scrollbar-width: thin;
-    }
-}
-
-::-webkit-scrollbar {
-    width: 0.5em;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--mainDarkGray);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--mainOffWhite);
-    border-radius: 10px;
-}
-
-
-
-
 
 
 
@@ -496,8 +473,6 @@ main .descriptionSection .descriptionContent {
     margin-right: 64px;
 
     padding-top: 16px;
-
-    opacity: 1;
 }
 
 main .descriptionSection .descriptionContent h2 {
@@ -528,7 +503,11 @@ main .descriptionSection .descriptionImage img {
     height: 100%;
     width: auto;
 
-    object-fit: cover;
+    object-fit: fill;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     border-radius: 10px;
 }
@@ -566,8 +545,6 @@ main .gridSection {
     padding: 16px;
 
     overflow: hidden;
-
-    min-width: 0;
 }
 
 .gridItem1 {
@@ -628,11 +605,6 @@ main .gridSection {
     grid-area: k;
 }
 
-.gridItem12 {
-    display: none;
-    grid-area: l;
-}
-
 .bentoImageHorizontal {
     height: 100%;
     aspect-ratio: 1;
@@ -673,6 +645,113 @@ main .gridSection {
     align-items: flex-start;
 
     margin-right: 32px;
+}
+
+
+
+
+main .cssSection {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .cssSection .cssLeftSection {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    margin-right: 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+main .cssLeftSection .cssText {
+    height: fit-content;
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+main .cssLeftSection .cssText h2 {
+    margin-bottom: 0.5em;
+}
+
+main .cssLeftSection .cssText p {
+    margin-bottom: 3em;
+}
+
+main .cssLeftSection .cssButtonBox {
+    height: fit-content;
+    width: 90%;
+
+    background-color: var(--mainDarkGray);
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 32px;
+}
+
+main .cssLeftSection .cssButtonBox button {
+    height: 80px;
+    width: 320px;
+
+    border-radius: 10px;
+
+    outline: none;
+    border: 2px solid white;
+    background-color: black;
+
+    color: white;
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    font-size: 1.25em;
+
+    transition: 0.1s ease-in;
+}
+
+main .cssLeftSection .cssButtonBox button:hover {
+    color: black;
+    background-color: white;
+}
+
+main .cssSection .cssRightSection {
+    position: relative;
+
+    height: max-content;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+;
+}
+
+main .cssRightSection .textEditor {
+    height: 330px;
+    width: 90%;
+
+    border-radius: 10px;
+
+    background-color: var(--mainDarkGray);
 }
 
 
@@ -1035,153 +1114,4 @@ footer .bottomSection .rightSection {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-}
-
-@media (max-width: 1832px) {
-    main .gridSection {
-        position: relative;
-    
-        height: 1000px;
-        width: 1500px;
-    
-        margin-top: 64px;
-        margin-bottom: 64px;
-    
-        display: grid;
-    
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-areas: 
-            "a k b b b"
-            "d k b b b"
-            "e e g g g"
-            "e e f f f"
-            "i i c c h"
-            "j j c c h";
-    
-        grid-gap: 32px;
-    
-        padding: 64px;
-    }
-}
-
-@media (max-width: 1532px) {
-    main .gridSection {
-        position: relative;
-    
-        height: 1200px;
-        width: 1200px;
-    
-        margin-top: 64px;
-        margin-bottom: 64px;
-    
-        display: grid;
-    
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-areas: 
-            "a k b b b"
-            "d k b b b"
-            "e e g g g"
-            "e e f f f"
-            "i i c c h"
-            "j j c c h";
-    
-        grid-gap: 32px;
-    
-        padding: 64px;
-    }
-}
-
-@media (max-width: 1232px) {
-    main .gridSection {
-        position: relative;
-    
-        height: 1400px;
-        width: 1000px;
-    
-        margin-top: 64px;
-        margin-bottom: 64px;
-    
-        display: grid;
-    
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(7, 1fr);
-        grid-template-areas: 
-            "a b b b"
-            "d b b b"
-            "e e k h"
-            "e e k h"
-            "i i c c"
-            "j j c c"
-            "g g f f";
-    
-        grid-gap: 32px;
-    
-        padding: 64px;
-    }
-}
-
-@media (max-width: 1032px) {
-    main .gridSection {
-        position: relative;
-    
-        height: 1500px;
-        width: 900px;
-    
-        margin-top: 64px;
-        margin-bottom: 64px;
-    
-        display: grid;
-    
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(10, 1fr);
-        grid-template-areas: 
-            "b b b"
-            "b b b"
-            "a g g"
-            "e e k"
-            "e e k"
-            "f f d"
-            "c c c"
-            "c c c"
-            "i i h"
-            "j j h";
-    
-        grid-gap: 32px;
-    
-        padding: 64px;
-    }
-}
-
-@media (max-width: 932px) {
-    main .gridSection {
-        position: relative;
-    
-        height: 1500px;
-        width: 600px;
-    
-        margin-top: 64px;
-        margin-bottom: 64px;
-    
-        display: grid;
-    
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(10, 1fr);
-        grid-template-areas: 
-            "b b b"
-            "b b b"
-            "a g g"
-            "e e k"
-            "e e k"
-            "f f d"
-            "c c c"
-            "c c c"
-            "i i h"
-            "j j h";
-    
-        grid-gap: 32px;
-    
-        padding: 64px;
-    }
 }
