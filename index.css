@@ -249,6 +249,43 @@ This is to remove the password reveal button I think.
     color: var(--mainBlack);
 }
 
+.pinkButton {
+    height: auto;
+    width: auto;
+    padding: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    border: 2px solid var(--pink);
+    outline: none;
+
+    cursor: pointer;
+
+    background: none;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    transition: 0.1s ease-in;
+}
+
+.pinkButton:hover {
+    background-color: var(--pink);
+    color: var(--mainOffWhite);
+}
+
 
 
 
@@ -288,7 +325,8 @@ This is to remove the password reveal button I think.
     font-size: var(--size6);
     color: var(--mainOffWhite);
 
-    font-family: "Inter", sans-serif;
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
     font-style: normal;
 
@@ -314,7 +352,8 @@ This is to remove the password reveal button I think.
     font-size: var(--size7);
     color: var(--mainOffWhite);
 
-    font-family: "Inter", sans-serif;
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
     font-style: normal;
 
@@ -440,7 +479,7 @@ main {
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 
     overflow: hidden;
@@ -544,15 +583,13 @@ main .hero .rightSection .buttons button {
 main .descriptionSection {
     position: relative;
     height: 60vh;
-    width: 100%;
+    width: 80%;
     background: var(--mainBlack);
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    overflow: hidden;
 
     margin-top: 128px;
     margin-bottom: 128px;
@@ -591,10 +628,10 @@ main .descriptionSection .descriptionContent button {
 main .descriptionSection .descriptionImage {
     position: relative;
     height: 90%;
-    width: auto;
+    width: 60%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -606,6 +643,93 @@ main .descriptionSection .descriptionImage img {
     object-fit: cover;
 
     border-radius: 10px;
+}
+
+
+
+main .statsSection {
+    position: relative;
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+main .statsSection .statsBox {
+    position: relative;
+    height: 200px;
+    width: 80%;
+
+    overflow: hidden;
+
+    background: none;
+
+    border: 2px solid var(--mainOffWhite);
+    border-radius: 10px;
+
+    margin-bottom: 64px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .statsSection .statsBox:nth-child(1) {
+    border: 2px solid var(--buttonBlue);
+}
+
+main .statsSection .statsBox:nth-child(2) {
+    border: 2px solid var(--buttonGreen);
+}
+
+main .statsSection .statsBox:nth-child(3) {
+    border: 2px solid (--mainOffWhite);
+}
+
+main .statsSection .statsBox:nth-child(4) {
+    border: 2px solid var(--pink);
+}
+
+main .statsSection .statsBox .leftStats {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 32px;
+}
+
+main .statsSection .statsBox .leftStats img {
+    height: 100%;
+    aspect-ratio: 1;
+
+    object-fit: contain;
+
+    margin-right: 32px;
+}
+
+main .statsSection .statsBox .leftStats .bigText {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--size9);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    margin-right: 32px;
 }
 
 
@@ -755,7 +879,7 @@ main .gridSection {
 main .cssSection {
     position: relative;
     height: fit-content;
-    width: 100%;
+    width: 80%;
 
     display: flex;
     flex-direction: row;
@@ -776,7 +900,7 @@ main .cssSection .cssLeftSection {
 
 main .cssLeftSection .cssText {
     height: fit-content;
-    width: 90%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -796,7 +920,7 @@ main .cssLeftSection .cssText p {
 
 main .cssLeftSection .cssButtonBox {
     height: fit-content;
-    width: 90%;
+    width: 100%;
 
     border-radius: 10px;
 
