@@ -320,7 +320,7 @@ This is to remove the password reveal button I think.
 
 .basicGrayText {
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 300;
     font-size: var(--size5);
     color: var(--mainLightGray);
 
@@ -612,9 +612,8 @@ main .hero .rightSection .buttons button {
 
 main .descriptionSection {
     position: relative;
-    height: 60vh;
+    height: auto;
     width: 80%;
-    background: var(--mainBlack);
 
     display: flex;
     flex-direction: row;
@@ -622,11 +621,13 @@ main .descriptionSection {
     align-items: center;
 
     margin-top: 128px;
+
+    background: var(--mainBlack);
 }
 
 main .descriptionSection .descriptionContent {
     position: relative;
-    height: 90%;
+    height: auto;
     width: 40%;
 
     display: flex;
@@ -656,7 +657,7 @@ main .descriptionSection .descriptionContent button {
 
 main .descriptionSection .descriptionImage {
     position: relative;
-    height: 90%;
+    height: 550px;
     width: 60%;
 
     display: flex;
@@ -1219,7 +1220,7 @@ main .cardSection {
     position: relative;
 
     width: 80%;
-    height: 75vh;
+    height: auto;
 
     margin-top: 128px;
 
@@ -1227,15 +1228,17 @@ main .cardSection {
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+
+    flex-wrap: wrap;
 }
 
 main .cardSection .card {
     position: relative;
 
-    height: 80%;
-    width: 25%;
+    height: 600px;
+    width: 400px;
 
     overflow: hidden;
 
@@ -1244,6 +1247,9 @@ main .cardSection .card {
     justify-content: flex-start;
     align-items: center;
     transition: 0.1s ease-in;
+
+    margin-right: 32px;
+    margin-bottom: 32px;
 }
 
 main .cardSection .card:hover {
@@ -1345,7 +1351,7 @@ main .cardSection .card .cardInformation h2 {
 
 footer {
     position: relative;
-    height: calc(60vh + 128px);
+    height: auto;
     width: 100%;
 
     padding-top: 128px;
@@ -1373,16 +1379,18 @@ footer .topSection {
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
 
-    padding: 32px;
+    flex-wrap: wrap;
+
+    padding: 64px;
 }
 
 footer .topSection .footerColumn {
     position: relative;
-    width: 15%;
-    height: 90%;
+    width: 200px;
+    height: auto;
 
     display: flex;
     flex-direction: column;
@@ -1390,6 +1398,7 @@ footer .topSection .footerColumn {
     align-items: flex-start;
 
     margin-right: 16px;
+    margin-bottom: 32px;
 }
 
 footer .topSection .footerColumn h2 {
@@ -1401,10 +1410,6 @@ footer .topSection .footerColumn h2 {
 }
 
 footer .topSection .footerColumn h3 {
-    font-weight: 300;
-
-    margin-right: 32px;
-
     transition: 0.1s ease-in;
 
     padding-bottom: 0.4em;
@@ -1414,17 +1419,6 @@ footer .topSection .footerColumn h3 {
 
 footer .topSection .footerColumn h3:hover {
     color: var(--mainOffWhite);
-}
-
-footer .topSection .footerColumn2 {
-    position: relative;
-    width: 15%;
-    height: 90%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
 }
 
 footer .topSection .footerColumn2 h2 {
@@ -1455,12 +1449,8 @@ footer .bottomSection .leftSection {
     justify-content: flex-start;
     align-items: center;
 
-    padding: 16px;
+    padding: 32px;
     padding-left: 64px;
-}
-
-footer .bottomSection .leftSection h2 {
-    font-weight: 500;
 }
 
 footer .bottomSection .rightSection {
@@ -1611,46 +1601,45 @@ footer .bottomSection .rightSection {
     }
 
     main .descriptionSection {
-        position: relative;
-        height: 60vh;
-        width: 80%;
-        background: var(--mainBlack);
-    
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-    
-        margin-top: 128px;
+        align-items: flex-start;
     }
 
     main .descriptionSection .descriptionContent {
-        position: relative;
-        height: 90%;
         width: 100%;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: start;
-    
         margin-right: 0px;
-
         margin-bottom: 64px;
-    
-        padding-top: 16px;
-    
-        opacity: 1;
     }
 
     main .descriptionSection .descriptionImage {
-        position: relative;
-        height: 90%;
-        width: 100%;
-    
         display: flex;
+        width: 100%;
+
         justify-content: flex-start;
         align-items: center;
+    }
+
+    main .cssSection {   
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    main .cssSection .cssLeftSection {
+        position: relative;
+        height: auto;
+        width: 100%;
+
+        margin-bottom: 64px;
+    }
+
+    main .cssSection .cssRightSection {
+        position: relative;
+        height: auto;
+        width: 100%;
     }
 }
 
