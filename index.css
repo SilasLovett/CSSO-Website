@@ -112,6 +112,8 @@ This is to remove the password reveal button I think.
     align-items: center;
 
     transition: 0.1s ease-in;
+
+    min-width: fit-content;
 }
 
 .getStartedButton:after {
@@ -166,6 +168,8 @@ This is to remove the password reveal button I think.
     vertical-align: middle;
 
     transition: 0.1s ease-in;
+
+    min-width: fit-content;
 }
 
 .whiteButton:hover {
@@ -204,6 +208,8 @@ This is to remove the password reveal button I think.
     vertical-align: middle;
 
     transition: 0.1s ease-in;
+
+    min-width: fit-content;
 }
 
 .smallWhiteButton:hover {
@@ -242,6 +248,8 @@ This is to remove the password reveal button I think.
     vertical-align: middle;
 
     transition: 0.1s ease-in;
+
+    min-width: fit-content;
 }
 
 .smallRedButton:hover {
@@ -279,6 +287,8 @@ This is to remove the password reveal button I think.
     vertical-align: middle;
 
     transition: 0.1s ease-in;
+
+    min-width: fit-content;
 }
 
 .pinkButton:hover {
@@ -461,6 +471,18 @@ header .middleSection h3:hover {
     color: var(--pink);
     margin-right: 40px;
     margin-left: 8px;
+}
+
+header .middleSection img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+
+    display: none;
+
+    cursor: pointer;
+
+    padding: 2px;
 }
 
 header .rightSection {
@@ -1313,10 +1335,6 @@ main .cardSection .card .cardInformation h2 {
     margin-bottom: 0.3em;
 }
 
-main .cardSection .card .cardInformation h3 {
-    font-weight: 500;
-}
-
 
 
 
@@ -1509,6 +1527,28 @@ footer .bottomSection .rightSection {
     
         padding: 64px;
     }
+
+    header .leftSection {
+        width: 15%;
+    }
+
+    header .rightSection {
+        width: 20%;
+    }
+
+    header .middleSection {
+        width: 65%;
+    }
+
+    main .hero .leftSection {
+        height: 100%;
+        width: 30%;
+    }
+    
+    main .hero .rightSection {
+        height: 100%;
+        width: 70%;
+    }
 }
 
 @media (max-width: 1232px) {
@@ -1537,6 +1577,80 @@ footer .bottomSection .rightSection {
         grid-gap: 32px;
     
         padding: 64px;
+    }
+
+    header .middleSection h3 {
+        display: none;
+    }
+
+    header .leftSection {
+        width: 50%;
+    }
+
+    header .rightSection {
+        display: none;
+    }
+
+    header .middleSection {
+        width: 50%;
+        justify-content: flex-end;
+    }
+
+    header .middleSection img {
+        display: block;
+    }
+
+    main .hero .leftSection {
+        height: 100%;
+        width: 20%;
+    }
+    
+    main .hero .rightSection {
+        height: 100%;
+        width: 80%;
+    }
+
+    main .descriptionSection {
+        position: relative;
+        height: 60vh;
+        width: 80%;
+        background: var(--mainBlack);
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        margin-top: 128px;
+    }
+
+    main .descriptionSection .descriptionContent {
+        position: relative;
+        height: 90%;
+        width: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    
+        margin-right: 0px;
+
+        margin-bottom: 64px;
+    
+        padding-top: 16px;
+    
+        opacity: 1;
+    }
+
+    main .descriptionSection .descriptionImage {
+        position: relative;
+        height: 90%;
+        width: 100%;
+    
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
     }
 }
 
@@ -1601,5 +1715,15 @@ footer .bottomSection .rightSection {
         grid-gap: 32px;
     
         padding: 64px;
+    }
+
+    main .hero .leftSection {
+        height: 100%;
+        width: 0%;
+    }
+    
+    main .hero .rightSection {
+        height: 100%;
+        width: 100%;
     }
 }
