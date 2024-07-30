@@ -406,7 +406,7 @@ This is to remove the password reveal button I think.
 
 
 
-header {
+.header {
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -423,7 +423,7 @@ header {
     padding: 16px;
 }
 
-header .leftSection {
+.header .leftSection {
     height: 100%;
     width: 20%;
 
@@ -434,11 +434,11 @@ header .leftSection {
     padding-left: 16px;
 }
 
-header .leftSection h3 {
+.header .leftSection h3 {
     cursor: pointer;
 }
 
-header .middleSection {
+.header .middleSection {
     height: 100%;
     width: 60%;
 
@@ -447,7 +447,7 @@ header .middleSection {
     align-items: center;
 }
 
-header .middleSection h3 {
+.header .middleSection h3 {
     text-decoration: none;
     font-weight: 400;
     font-size: var(--size5);
@@ -467,13 +467,13 @@ header .middleSection h3 {
     transition: 0.1s ease-in;
 }
 
-header .middleSection h3:hover {
+.header .middleSection h3:hover {
     color: var(--pink);
     margin-right: 40px;
     margin-left: 8px;
 }
 
-header .middleSection img {
+.header .middleSection img {
     height: 100%;
     aspect-ratio: 1;
     object-fit: contain;
@@ -485,7 +485,7 @@ header .middleSection img {
     padding: 2px;
 }
 
-header .rightSection {
+.header .rightSection {
     height: 100%;
     width: 20%;
 
@@ -495,6 +495,53 @@ header .rightSection {
 
     padding-right: 16px;
 }
+
+
+
+
+
+
+
+
+
+.navMenu {
+    position: fixed;
+    z-index: 1000;
+
+    width: 100%;
+    height: auto;
+
+    margin-top: 80px;
+
+    border-bottom: 2px solid var(--mainOffWhite);
+
+    background-color: var(--mainBlack);
+
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navMenu .navColumn {
+    position: relative;
+    width: 200px;
+    height: 400px;
+
+    background-color: #CB04A5;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin-right: 16px;
+    margin-bottom: 32px;
+}
+
+
+
 
 
 
@@ -768,146 +815,6 @@ main .statsSection .statsBox .leftStats .bigText {
 
 
 
-main .gridSection {
-    position: relative;
-
-    height: 800px;
-    width: 1800px;
-
-    margin-top: 256px;
-
-    display: grid;
-
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-areas: 
-        "a k b b b i i"
-        "d k b b b j j"
-        "e e g g h c c"
-        "e e f f h c c";
-
-    grid-gap: 32px;
-
-    padding: 64px;
-}
-
-.gridItem {
-    background-color: var(--mainDarkGray);
-    border-radius: 10px;
-    padding: 16px;
-
-    overflow: hidden;
-
-    min-width: 0;
-}
-
-.gridItem1 {
-    grid-area: a;
-}
-
-.gridItem2 {
-    grid-area: b;
-    padding: 32px;
-
-    display: flex;
-    flex-direction: row;
-}
-
-.gridItem3 {
-    grid-area: c;
-}
-
-.gridItem4 {
-    grid-area: d;
-}
-
-.gridItem5 {
-    grid-area: e;
-
-    padding: 32px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.gridItem6 {
-    grid-area: f;
-}
-.gridItem7 {
-    grid-area: g;
-
-    padding: 32px;
-
-    display: flex;
-    flex-direction: row;
-}
-
-.gridItem8 {
-    grid-area: h;
-}
-
-.gridItem9 {
-    grid-area: i;
-}
-
-.gridItem10 {
-    grid-area: j;
-}
-
-.gridItem11 {
-    grid-area: k;
-}
-
-.gridItem12 {
-    display: none;
-    grid-area: l;
-}
-
-.bentoImageHorizontal {
-    height: 100%;
-    aspect-ratio: 1;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-}
-
-.bentoImageVertical {
-    width: 100%;
-    height: 50%;
-
-    object-fit: cover;
-
-    border-radius: 10px;
-}
-
-.bentoTextboxRight {
-    height: 100%;
-    width: auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-    margin-left: 32px;
-}
-
-.bentoTextboxLeft {
-    height: 100%;
-    width: auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
-    margin-right: 32px;
-}
-
-
-
 main .cssSection {
     position: relative;
     height: fit-content;
@@ -1117,104 +1024,6 @@ main .cssRightSection .cssLine input {
 
 
 
-main .scrollerSection {
-    width: 100%;
-    height: 50vh;
-
-    margin-top: 256px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    white-space: nowrap;
-
-    overflow: hidden;
-
-    padding: 32px;
-}
-
-main .scrollerSection:hover .scroller {
-    animation-play-state: paused;
-}
-
-main .scrollerSection .scroller {
-    height: 100%;
-    width: auto;
-
-    display: flex;
-    flex-direction: row;
-
-    animation: 30s slideCard infinite linear;
-}
-
-@keyframes slideCard {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-main .scrollerSection .scroller .scrollingCard {
-    height: 100%;
-    aspect-ratio: 1/1.4;
-
-    background-color: var(--mainDarkGray);
-
-    border-radius: 10px;
-
-    margin-right: 32px;
-
-    display: flex;
-    flex-direction: column;
-
-    overflow: hidden;
-
-    white-space: wrap;
-}
-
-main .scrollerSection .scroller .scrollingCard .imageSection {
-    width: 100%;
-    height: 60%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-main .scrollerSection .scroller .scrollingCard .imageSection img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-}
-
-main .scrollerSection .scroller .scrollingCard .detailsSection {
-    position: relative;
-
-    width: 100%;
-    height: 40%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-
-    padding: 16px;
-}
-
-main .scrollerSection .scroller .scrollingCard .detailsSection h2 {
-    margin-bottom: 0.5em;
-}
-
-
-
-
-
-
 
 
 main .cardSection {
@@ -1238,8 +1047,8 @@ main .cardSection {
 main .cardSection .card {
     position: relative;
 
-    height: 600px;
-    width: 400px;
+    height: 650px;
+    width: 350px;
 
     overflow: hidden;
 
@@ -1519,15 +1328,15 @@ footer .bottomSection .rightSection {
         padding: 64px;
     }
 
-    header .leftSection {
+    .header .leftSection {
         width: 15%;
     }
 
-    header .rightSection {
+    .header .rightSection {
         width: 20%;
     }
 
-    header .middleSection {
+    .header .middleSection {
         width: 65%;
     }
 
@@ -1574,24 +1383,24 @@ footer .bottomSection .rightSection {
         padding: 64px;
     }
 
-    header .middleSection h3 {
+    .header .middleSection h3 {
         display: none;
     }
 
-    header .leftSection {
+    .header .leftSection {
         width: 50%;
     }
 
-    header .rightSection {
+    .header .rightSection {
         display: none;
     }
 
-    header .middleSection {
+    .header .middleSection {
         width: 50%;
         justify-content: flex-end;
     }
 
-    header .middleSection img {
+    .header .middleSection img {
         display: block;
     }
 
@@ -1792,3 +1601,243 @@ footer .bottomSection .rightSection {
         padding: 48px;
     }
 }
+
+
+/*main .gridSection {
+    position: relative;
+
+    height: 800px;
+    width: 1800px;
+
+    margin-top: 256px;
+
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+        "a k b b b i i"
+        "d k b b b j j"
+        "e e g g h c c"
+        "e e f f h c c";
+
+    grid-gap: 32px;
+
+    padding: 64px;
+}
+
+.gridItem {
+    background-color: var(--mainDarkGray);
+    border-radius: 10px;
+    padding: 16px;
+
+    overflow: hidden;
+
+    min-width: 0;
+}
+
+.gridItem1 {
+    grid-area: a;
+}
+
+.gridItem2 {
+    grid-area: b;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.gridItem3 {
+    grid-area: c;
+}
+
+.gridItem4 {
+    grid-area: d;
+}
+
+.gridItem5 {
+    grid-area: e;
+
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.gridItem6 {
+    grid-area: f;
+}
+.gridItem7 {
+    grid-area: g;
+
+    padding: 32px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.gridItem8 {
+    grid-area: h;
+}
+
+.gridItem9 {
+    grid-area: i;
+}
+
+.gridItem10 {
+    grid-area: j;
+}
+
+.gridItem11 {
+    grid-area: k;
+}
+
+.gridItem12 {
+    display: none;
+    grid-area: l;
+}
+
+.bentoImageHorizontal {
+    height: 100%;
+    aspect-ratio: 1;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.bentoImageVertical {
+    width: 100%;
+    height: 50%;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.bentoTextboxRight {
+    height: 100%;
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-left: 32px;
+}
+
+.bentoTextboxLeft {
+    height: 100%;
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-right: 32px;
+}*/
+
+
+
+
+
+
+
+/*
+main .scrollerSection {
+    width: 100%;
+    height: 50vh;
+
+    margin-top: 256px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    padding: 32px;
+}
+
+main .scrollerSection:hover .scroller {
+    animation-play-state: paused;
+}
+
+main .scrollerSection .scroller {
+    height: 100%;
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+
+    animation: 30s slideCard infinite linear;
+}
+
+@keyframes slideCard {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+main .scrollerSection .scroller .scrollingCard {
+    height: 100%;
+    aspect-ratio: 1/1.4;
+
+    background-color: var(--mainDarkGray);
+
+    border-radius: 10px;
+
+    margin-right: 32px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    white-space: wrap;
+}
+
+main .scrollerSection .scroller .scrollingCard .imageSection {
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .scrollerSection .scroller .scrollingCard .imageSection img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+main .scrollerSection .scroller .scrollingCard .detailsSection {
+    position: relative;
+
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 16px;
+}
+
+main .scrollerSection .scroller .scrollingCard .detailsSection h2 {
+    margin-bottom: 0.5em;
+}
+    */
