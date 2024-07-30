@@ -689,7 +689,7 @@ main .statsSection {
 
     overflow: hidden;
 
-    margin-top: 128px;
+    margin-top: 256px;
 }
 
 main .statsSection .statsBox {
@@ -726,6 +726,7 @@ main .statsSection .statsBox:nth-child(3) {
 
 main .statsSection .statsBox:nth-child(4) {
     border: 2px solid var(--pink);
+    margin-bottom: 0px;
 }
 
 main .statsSection .statsBox .leftStats {
@@ -773,7 +774,7 @@ main .gridSection {
     height: 800px;
     width: 1800px;
 
-    margin-top: 128px;
+    margin-top: 256px;
 
     display: grid;
 
@@ -912,7 +913,7 @@ main .cssSection {
     height: fit-content;
     width: 80%;
 
-    margin-top: 128px;
+    margin-top: 256px;
 
     display: flex;
     flex-direction: row;
@@ -1120,7 +1121,7 @@ main .scrollerSection {
     width: 100%;
     height: 50vh;
 
-    margin-top: 128px;
+    margin-top: 256px;
 
     display: flex;
     flex-direction: row;
@@ -1222,13 +1223,13 @@ main .cardSection {
     width: 80%;
     height: auto;
 
-    margin-top: 128px;
+    margin-top: 256px;
 
     background: var(--mainBlack);
 
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 
     flex-wrap: wrap;
@@ -1354,7 +1355,7 @@ footer {
     height: auto;
     width: 100%;
 
-    padding-top: 128px;
+    padding-top: 256px;
 
     background-color: var(--mainBlack);
 
@@ -1539,6 +1540,10 @@ footer .bottomSection .rightSection {
         height: 100%;
         width: 70%;
     }
+
+    main .cardSection {
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 1232px) {
@@ -1601,6 +1606,8 @@ footer .bottomSection .rightSection {
     }
 
     main .descriptionSection {
+        width: 80%;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1614,11 +1621,25 @@ footer .bottomSection .rightSection {
     }
 
     main .descriptionSection .descriptionImage {
-        display: flex;
+        position: relative;
+        height: auto;
         width: 100%;
-
+    
+        display: flex;
         justify-content: flex-start;
         align-items: center;
+
+        overflow: hidden;
+    }
+    
+    main .descriptionSection .descriptionImage img {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    
+        object-fit: contain;
+    
+        border-radius: 10px;
     }
 
     main .cssSection {   
@@ -1673,6 +1694,57 @@ footer .bottomSection .rightSection {
     
         padding: 64px;
     }
+
+    footer .bottomSection {
+        width: 100%;
+        height: auto;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    footer .bottomSection .leftSection {
+        height: auto;
+        width: 100%;
+    }
+
+    footer .bottomSection .rightSection {
+        height: auto;
+        width: 100%;
+    }
+
+    main .statsSection .statsBox {
+        height: 100px;
+        width: 80%;
+    }
+
+    main .statsSection .statsBox .leftStats img {
+        height: 100%;
+        aspect-ratio: 1;
+    
+        object-fit: cover;
+    
+        margin-right: 32px;
+    }
+    
+    main .statsSection .statsBox .leftStats .bigText {
+        font-size: var(--size7);
+    }
+
+    main .statsSection .statsBox .leftStats h2 {
+        font-size: var(--size6);
+    }
+
+    :root {
+        --size4: 0.6417em;
+        --size5: 1.000em;
+        --size6: 1.7416em;
+        --size7: 2.7415em;
+        --size8: 3.5830em;
+        --size9: 8.2243em;
+    }
 }
 
 @media (max-width: 932px) {
@@ -1714,5 +1786,9 @@ footer .bottomSection .rightSection {
     main .hero .rightSection {
         height: 100%;
         width: 100%;
+
+        justify-content: flex-end;
+
+        padding: 48px;
     }
 }
