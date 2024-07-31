@@ -54,3 +54,40 @@ gsap.from("#statsBox4", {
   autoAlpha: 0,
   x: '-100%',
 });
+
+
+let navElements = document.querySelectorAll(".navElement");
+
+navElements.forEach(link => {
+  link.addEventListener('mouseenter', () => {
+
+    let navMenu = link.querySelector(".navMenu");
+    if(navMenu != null) {
+      navMenu.style.display = "flex";
+    }
+
+  });
+  link.addEventListener('mouseleave', () => {
+
+    // Your event handler code here
+    let navMenu = link.querySelector(".navMenu");
+    if(navMenu != null) {
+      navMenu.style.display = "none";
+    }
+
+  });
+})
+
+let mobileNavButton = document.getElementById("mobileNavButton");
+let mobileNav = document.getElementById("mobileNav");
+
+mobileNavButton.addEventListener('click', () => {
+  if(mobileNav.classList.contains("mobileNavOpen")) {
+    mobileNav.classList.remove("mobileNavOpen");
+    mobileNav.classList.add("mobileNavClose");
+  } else {
+    mobileNav.classList.remove("mobileNavClose");
+    mobileNav.classList.add("mobileNavOpen");
+  }
+
+});

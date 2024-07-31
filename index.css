@@ -495,7 +495,7 @@ header .middleSection .navElement {
 
     cursor: pointer;
 
-    padding: 2px;
+    padding: 18px;
 }
 
 .header .rightSection {
@@ -521,7 +521,7 @@ header .middleSection .navElement {
 
 .navMenu {
     position: absolute;
-    z-index: 1000;
+    z-index: 999;
     width: auto;
     height: auto;
 
@@ -533,7 +533,7 @@ header .middleSection .navElement {
     background-color: var(--mainBlack);
 
     padding: 32px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -568,6 +568,94 @@ header .middleSection .navElement {
 
 
 
+
+
+
+.mobileNav {
+    position: fixed;
+    z-index: 998;
+    height: 100%;
+    width: 100%;
+
+    top: -100%;
+
+    background-color: var(--mainBlack);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobileNav .mainLinks {
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobileNav .mainLinks h2 {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--size8);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    margin-bottom: 32px;
+
+    cursor: pointer;
+
+    transition: 0.1s ease-in;
+}
+
+.mobileNav .mainLinks h2:hover {
+    color: var(--pink);
+}
+
+@keyframes mobileNavOpenAnim {
+    from {top: -100%;}
+    to {top: 0;}
+}
+
+@keyframes mobileNavCloseAnim {
+    from {top: 0;}
+    to {top: -100%;}
+}
+
+.mobileNavOpen {
+    animation-name: mobileNavOpenAnim;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+.mobileNavClose {
+    animation-name: mobileNavCloseAnim;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 main {
     position: relative;
     background: var(--mainBlack);
@@ -584,7 +672,9 @@ main .hero {
     position: relative;
 
     width: 100%;
+
     height: 100vh;
+    height: 100svh;
 
     background: var(--mainBlack);
 
