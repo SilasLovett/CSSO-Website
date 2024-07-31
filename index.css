@@ -419,8 +419,6 @@ This is to remove the password reveal button I think.
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 16px;
 }
 
 .header .leftSection {
@@ -431,7 +429,10 @@ This is to remove the password reveal button I think.
     justify-content: flex-start;
     align-items: center;
 
-    padding-left: 16px;
+    padding-left: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
 }
 
 .header .leftSection h3 {
@@ -447,7 +448,16 @@ This is to remove the password reveal button I think.
     align-items: center;
 }
 
-.header .middleSection h3 {
+header .middleSection .navElement {
+    height: 100%;
+    transition: 0.1s ease-in;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header .middleSection .navElement .pinkLink {
     text-decoration: none;
     font-weight: 400;
     font-size: var(--size5);
@@ -467,10 +477,13 @@ This is to remove the password reveal button I think.
     transition: 0.1s ease-in;
 }
 
-.header .middleSection h3:hover {
-    color: var(--pink);
-    margin-right: 40px;
+.header .middleSection .navElement:hover {
+    margin-right: 16px;
     margin-left: 8px;
+}
+
+.header .middleSection .navElement:hover .pinkLink {
+    color: var(--pink);
 }
 
 .header .middleSection img {
@@ -493,7 +506,9 @@ This is to remove the password reveal button I think.
     justify-content: flex-end;
     align-content: center;
 
-    padding-right: 16px;
+    padding-right: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 
@@ -505,13 +520,13 @@ This is to remove the password reveal button I think.
 
 
 .navMenu {
-    position: fixed;
+    position: absolute;
     z-index: 1000;
-
-    width: 100%;
+    width: auto;
     height: auto;
 
-    margin-top: 80px;
+    top: 80px;
+    margin-left: -32px;
 
     border-bottom: 2px solid var(--mainOffWhite);
 
@@ -527,17 +542,22 @@ This is to remove the password reveal button I think.
 .navMenu .navColumn {
     position: relative;
     width: 200px;
-    height: 400px;
-
-    background-color: #CB04A5;
+    height: auto;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 
-    margin-right: 16px;
-    margin-bottom: 32px;
+    margin-right: 32px;
+}
+
+.navMenu .navColumn h2 {
+    margin-bottom: 0.5em;
+}
+
+.navMenu .navColumn:last-of-type {
+    margin-right: 0px;
 }
 
 
