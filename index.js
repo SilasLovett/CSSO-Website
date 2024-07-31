@@ -81,6 +81,9 @@ navElements.forEach(link => {
 let mobileNavButton = document.getElementById("mobileNavButton");
 let mobileNav = document.getElementById("mobileNav");
 
+let extraLinks = document.getElementById("extraLinks");
+let mainLinks = document.getElementById("mainLinks");
+
 mobileNavButton.addEventListener('click', () => {
   if(mobileNav.classList.contains("mobileNavOpen")) {
     mobileNav.classList.remove("mobileNavOpen");
@@ -91,3 +94,14 @@ mobileNavButton.addEventListener('click', () => {
   }
 
 });
+
+let clickableMobileLinks = document.querySelectorAll(".clickableMobileLink");
+
+clickableMobileLinks.forEach(link => {
+  link.addEventListener('click', () => {
+
+    extraLinks.style.left = "0";
+    mainLinks.style.left = "-100%";
+
+  });
+})
