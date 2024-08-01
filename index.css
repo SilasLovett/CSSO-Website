@@ -965,6 +965,8 @@ main .descriptionSection .descriptionImage img {
     object-fit: cover;
 
     border-radius: 10px;
+
+    pointer-events: none;
 }
 
 
@@ -1103,12 +1105,14 @@ main .cssLeftSection .cssText h2 {
 }
 
 main .cssLeftSection .cssText p {
-    margin-bottom: 3em;
+    margin-bottom: 0.5em;
 }
 
 main .cssLeftSection .cssButtonBox {
-    height: fit-content;
+    height: 200px;
     width: 100%;
+
+    overflow: hidden;
 
     border-radius: 10px;
 
@@ -1136,12 +1140,9 @@ main .cssLeftSection .cssButtonBox button {
 
     font-size: 1.25em;
 
-    transition: 0.1s ease-in;
-}
+    cursor: pointer;
 
-main .cssLeftSection .cssButtonBox button:hover {
-    color: black;
-    background-color: white;
+    transition: 0.1s ease-in;
 }
 
 main .cssSection .cssRightSection {
@@ -1307,10 +1308,6 @@ main .cardSection .card {
     margin-bottom: 32px;
 }
 
-main .cardSection .card:hover {
-    transform: scale(1.03);
-}
-
 main .cardSection .card .imageHolder {
     position: relative;
 
@@ -1330,6 +1327,8 @@ main .cardSection .card .imageHolder img {
 
     object-fit: cover;
     overflow: hidden;
+
+    pointer-events: none;
 }
 
 main .cardSection .card .imageHolder .imageButton {
@@ -1518,6 +1517,17 @@ footer .bottomSection .rightSection {
     align-items: center;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1832px) {
     main .gridSection {
         position: relative;
@@ -1598,6 +1608,82 @@ footer .bottomSection .rightSection {
     main .cardSection {
         justify-content: flex-start;
     }
+
+    main .descriptionSection {
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    main .descriptionSection .descriptionContent {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 64px;
+    }
+
+    main .descriptionSection .descriptionImage {
+        position: relative;
+        height: auto;
+        width: 100%;
+    
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        overflow: hidden;
+    }
+    
+    main .descriptionSection .descriptionImage img {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    
+        object-fit: contain;
+    
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 1400px) {
+    main .descriptionSection {
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    main .descriptionSection .descriptionContent {
+        width: 100%;
+        margin-right: 0px;
+        margin-bottom: 64px;
+    }
+
+    main .descriptionSection .descriptionImage {
+        position: relative;
+        height: auto;
+        width: 100%;
+    
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        overflow: hidden;
+    }
+    
+    main .descriptionSection .descriptionImage img {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    
+        object-fit: contain;
+    
+        border-radius: 10px;
+    }
 }
 
 @media (max-width: 1232px) {
@@ -1657,43 +1743,6 @@ footer .bottomSection .rightSection {
     main .hero .rightSection {
         height: 100%;
         width: 80%;
-    }
-
-    main .descriptionSection {
-        width: 80%;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
-
-    main .descriptionSection .descriptionContent {
-        width: 100%;
-        margin-right: 0px;
-        margin-bottom: 64px;
-    }
-
-    main .descriptionSection .descriptionImage {
-        position: relative;
-        height: auto;
-        width: 100%;
-    
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-
-        overflow: hidden;
-    }
-    
-    main .descriptionSection .descriptionImage img {
-        position: relative;
-        height: 100%;
-        width: 100%;
-    
-        object-fit: contain;
-    
-        border-radius: 10px;
     }
 
     main .cssSection {   
