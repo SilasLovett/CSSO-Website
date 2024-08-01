@@ -96,6 +96,7 @@ mobileNavButton.addEventListener('click', () => {
 });
 
 let clickableMobileLinks = document.querySelectorAll(".clickableMobileLink");
+let mobileNavBackButton = document.getElementById("mobileNavBackButton");
 
 clickableMobileLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -105,3 +106,10 @@ clickableMobileLinks.forEach(link => {
 
   });
 })
+
+mobileNavBackButton.addEventListener('click', () => {
+
+  extraLinks.style.left = "100%";
+  mainLinks.style.left = "0";
+
+});

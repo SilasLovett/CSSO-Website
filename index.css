@@ -574,7 +574,7 @@ header .middleSection .navElement {
 .mobileNav {
     position: fixed;
     z-index: 998;
-    height: 100%;
+    height: calc(100svh - 80px);
     width: 100%;
 
     top: -100%;
@@ -686,10 +686,55 @@ header .middleSection .navElement {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
 
     transition: 0.2s ease-out;
+}
+
+.mobileNav .extraLinks .spacer {
+    height: 2px;
+    width: 100%;
+
+    background-color: var(--mainLightGray);
+}
+
+.mobileNav .extraLinks .backSection {
+    height: auto;
+    width: 200px;
+
+    padding-left: 64px;
+
+    margin-bottom: 32px;
+    margin-top: 32px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    cursor: pointer;
+
+    width: 100%;
+}
+
+.mobileNav .extraLinks .backSection img {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+
+    margin-right: 8px;
+}
+
+.mobileNav .extraLinks .backSection h2 {
+    font-size: var(--size6);
+    transition: 0.1s ease-in;
+
+    margin-top: 2px;
+}
+
+.mobileNav .extraLinks .backSection:hover h2 {
+    color: var(--pink);
 }
 
 .mobileNav .extraLinks .mobileNavColumn {
@@ -705,12 +750,31 @@ header .middleSection .navElement {
     margin-left: 64px;
 
     margin-bottom: 32px;
+    margin-top: 32px;
 }
 
 .mobileNav .extraLinks .mobileNavColumn h2 {
     margin-bottom: 0.5em;
     font-size: var(--size6);
+    transition: 0.1s ease-in;
+    cursor: pointer;
 }
+
+.mobileNav .extraLinks .mobileNavColumn h3 {
+    font-size: calc(var(--size5) + 0.25em);
+    transition: 0.1s ease-in;
+    cursor: pointer;
+}
+
+.mobileNav .extraLinks .mobileNavColumn h3:hover {
+    color: var(--pink);
+}
+
+.mobileNav .extraLinks .mobileNavColumn h2:hover {
+    color: var(--pink);
+}
+
+
 
 
 
@@ -740,8 +804,8 @@ main .hero {
 
     width: 100%;
 
-    height: 100vh;
-    height: 100svh;
+    height: 80vh;
+    height: 80svh;
 
     background: var(--mainBlack);
 
@@ -749,6 +813,8 @@ main .hero {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+
+    border-bottom: 2px solid #000000;
 }
 
 main .hero .splineSection {
@@ -802,6 +868,8 @@ main .hero .rightSection h1 {
     margin-bottom: 0.4em;
 
     letter-spacing: 0.01em;
+
+    margin-left: 6px;
 }
 
 main .hero .rightSection p {
@@ -844,7 +912,7 @@ main .descriptionSection {
     justify-content: center;
     align-items: center;
 
-    margin-top: 128px;
+    margin-top: 32px;
 
     background: var(--mainBlack);
 }
@@ -861,7 +929,7 @@ main .descriptionSection .descriptionContent {
 
     margin-right: 64px;
 
-    padding-top: 16px;
+    padding-top: 8px;
 
     opacity: 1;
 }
@@ -1708,7 +1776,7 @@ footer .bottomSection .rightSection {
 
     main .statsSection .statsBox .leftStats img {
         height: 100%;
-        aspect-ratio: 1;
+        aspect-ratio: 1/3;
     
         object-fit: cover;
     
@@ -1717,10 +1785,12 @@ footer .bottomSection .rightSection {
     
     main .statsSection .statsBox .leftStats .bigText {
         font-size: var(--size7);
+        margin-left: -8px;
     }
 
     main .statsSection .statsBox .leftStats h2 {
         font-size: var(--size6);
+        margin-left: -8px;
     }
 
     :root {
@@ -1728,8 +1798,13 @@ footer .bottomSection .rightSection {
         --size5: 1.000em;
         --size6: 1.7416em;
         --size7: 2.7415em;
-        --size8: 3.5830em;
-        --size9: 8.2243em;
+        --size8: 3em;
+        --size9: 3em;
+    }
+
+    main .hero {
+        height: 90vh;
+        height: 90svh;
     }
 }
 
@@ -1776,6 +1851,12 @@ footer .bottomSection .rightSection {
         justify-content: flex-end;
 
         padding: 48px;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .mobileNav {
+        height: calc(100svh);
     }
 }
 
