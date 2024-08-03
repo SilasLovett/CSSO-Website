@@ -178,6 +178,51 @@ This is to remove the password reveal button I think.
 }
 
 
+
+
+.blackButton {
+    height: auto;
+    width: auto;
+    padding: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    border: 2px solid var(--mainBlack);
+    outline: none;
+
+    cursor: pointer;
+
+    background: none;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainBlack);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    transition: 0.1s ease-in;
+
+    min-width: fit-content;
+}
+
+.blackButton:hover {
+    background-color: var(--mainBlack);
+    color: var(--mainOffWhite);
+}
+
+
+
+
+
 .smallWhiteButton {
     height: auto;
     width: auto;
@@ -403,12 +448,41 @@ This is to remove the password reveal button I think.
 
 
 
+.bannerNotif {
+    position: fixed;
+    top: 0px;
+    height: 80px;
+    width: 100%;
+    z-index: 999;
 
+    background-color: var(--mainOffWhite);
+
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bannerNotif h3 {
+    margin: 16px;
+    margin-left: 32px;
+    color: var(--mainBlack);
+}
+
+.bannerNotif img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+
+    padding: 8px;
+    margin-right: 32px;
+
+    cursor: pointer;
+}
 
 
 .header {
     position: fixed;
-    top: 0;
+    top: 0px;
     z-index: 1000;
 
     height: 80px;
@@ -772,6 +846,89 @@ header .middleSection .navElement {
 
 .mobileNav .extraLinks .mobileNavColumn h2:hover {
     color: var(--pink);
+}
+
+
+
+.cookiesNotification {
+    height: auto;
+    width: auto;
+
+    position: fixed;
+    left: 64px;
+    bottom: 64px;
+
+    z-index: 996;
+
+    background-color: var(--mainOffWhite);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cookiesNotification .computerHeader {
+    height: 32px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    border-bottom: 2px solid var(--mainBlack);
+}
+
+.cookiesNotification .computerHeader h5 {
+    font-size: var(--size4);
+}
+
+.cookiesNotification .computerHeader img {
+    height: 100%;
+    aspect-ratio: 1;
+
+    object-fit: contain;
+
+    cursor: pointer;
+}
+
+.cookiesNotification .mainNotification {
+    height: calc(100% - 32px);
+    width: 100%;
+
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.cookiesNotification .mainNotification h2 {
+    color: var(--mainBlack);
+    margin-bottom: 0.5em;
+    width: 400px;
+}
+
+.cookiesNotification .mainNotification h3 {
+    color: var(--mainBlack);
+    margin-bottom: 1em;
+    width: 400px;
+}
+
+.cookiesNotification .mainNotification .buttonsBox {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.cookiesNotification .mainNotification .buttonsBox button {
+    margin-right: 16px;
 }
 
 
