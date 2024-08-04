@@ -223,7 +223,7 @@ This is to remove the password reveal button I think.
 
 
 
-.smallWhiteButton {
+.smallRedButton {
     height: auto;
     width: auto;
     padding: 8px;
@@ -257,13 +257,13 @@ This is to remove the password reveal button I think.
     min-width: fit-content;
 }
 
-.smallWhiteButton:hover {
+.smallRedButton:hover {
     background-color: var(--red);
     color: var(--mainOffWhite);
 }
 
 
-.smallRedButton {
+.smallWhiteButton {
     height: auto;
     width: auto;
     padding: 8px;
@@ -297,9 +297,48 @@ This is to remove the password reveal button I think.
     min-width: fit-content;
 }
 
-.smallRedButton:hover {
+.smallWhiteButton:hover {
     background-color: var(--mainOffWhite);
     color: var(--mainBlack);
+}
+
+.smallBlackButton {
+    height: auto;
+    width: auto;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    border: 2px solid var(--mainBlack);
+    outline: none;
+
+    cursor: pointer;
+
+    background: none;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainBlack);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    transition: 0.1s ease-in;
+
+    min-width: fit-content;
+}
+
+.smallBlackButton:hover {
+    background-color: var(--mainBlack);
+    color: var(--mainOffWhite);
 }
 
 .pinkButton {
@@ -457,7 +496,7 @@ This is to remove the password reveal button I think.
 
     background-color: var(--mainOffWhite);
 
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -482,7 +521,7 @@ This is to remove the password reveal button I think.
 
 .header {
     position: fixed;
-    top: 0px;
+    top: 80px;
     z-index: 1000;
 
     height: 80px;
@@ -931,6 +970,104 @@ header .middleSection .navElement {
     margin-right: 16px;
 }
 
+
+
+
+
+
+.toastNotification {
+    height: 132px;
+    width: 800px;
+
+    position: fixed;
+    left: calc(50% - 400px);
+    top: 128px;
+
+    z-index: 996;
+
+    background-color: var(--mainOffWhite);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.toastNotification .computerHeader {
+    height: 32px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    border-bottom: 2px solid var(--mainBlack);
+}
+
+.toastNotification .computerHeader h5 {
+    font-size: var(--size4);
+}
+
+.toastNotification .computerHeader img {
+    height: 100%;
+    aspect-ratio: 1;
+
+    object-fit: contain;
+
+    cursor: pointer;
+}
+
+.toastNotification .mainNotification {
+    height: calc(100% - 32px);
+    width: 100%;
+
+    padding: 16px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toastNotification .mainNotification .leftSection {
+    height: 100%;
+    width: 80%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.toastNotification .mainNotification .leftSection img {
+    height: 100%;
+    aspect-ratio: 1;
+
+    object-fit: contain;
+
+    margin-right: 16px;
+}
+
+.toastNotification .mainNotification .leftSection h2 {
+    color: var(--mainBlack);
+}
+
+.toastNotification .mainNotification .rightSection {
+    height: 100%;
+    width: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.toastNotification .mainNotification .rightSection button {
+    margin-left: 16px;
+}
 
 
 
@@ -2057,6 +2194,75 @@ footer .bottomSection .rightSection {
         justify-content: flex-end;
 
         padding: 48px;
+    }
+
+    .toastNotification {
+        height: 232px;
+        width: 500px;
+    
+        position: fixed;
+        left: calc(50% - 250px);
+        top: 228px;
+    
+        z-index: 996;
+    
+        background-color: var(--mainOffWhite);
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .toastNotification .mainNotification {
+        height: calc(100% - 32px);
+        width: 100%;
+    
+        padding: 16px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .toastNotification .mainNotification .leftSection {
+        height: 100%;
+        width: 80%;
+    
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .toastNotification .mainNotification .leftSection img {
+        height: 75px;
+    }
+    
+    .toastNotification .mainNotification .rightSection {
+        height: 100%;
+        width: auto;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 732px) {
+    .cookiesNotification {
+        height: auto;
+        width: 100%;
+    
+        left: 0px;
+        bottom: 64px;
+    }
+
+    .toastNotification {
+        height: 232px;
+        width: 100%;
+        left: 0px;
     }
 }
 
