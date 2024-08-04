@@ -179,3 +179,24 @@ CSSResetButton.addEventListener('click', () => {
   CSSEditorButton.style.fontSize = "1.25em";
   CSSFontInput.value = "1.25em";
 });
+
+let bannerNotificationClose = document.getElementById("bannerNotificationClose");
+let bannerNotification = document.getElementById("bannerNotification");
+let bannerNotificationText = document.getElementById("bannerNotificationText");
+
+let header = document.getElementById("header");
+
+bannerNotificationClose.addEventListener('click', () => {
+  bannerNotification.style.top = "-48px";
+  header.style.top = "0px";
+});
+
+function createBannerNotification(text) {
+  bannerNotificationText.innerText = text;
+  bannerNotification.style.top = "0px";
+  header.style.top = "48px";
+}
+
+setTimeout(function() {
+  createBannerNotification("Please remember, this site is a work in progress!");
+}, 5000);

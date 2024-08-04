@@ -489,8 +489,8 @@ This is to remove the password reveal button I think.
 
 .bannerNotif {
     position: fixed;
-    top: 0px;
-    height: 80px;
+    top: -48px;
+    height: 48px;
     width: 100%;
     z-index: 999;
 
@@ -499,11 +499,13 @@ This is to remove the password reveal button I think.
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    transition: 0.1s ease-in;
 }
 
 .bannerNotif h3 {
-    margin: 16px;
     margin-left: 32px;
+    margin-top: 2px;
     color: var(--mainBlack);
 }
 
@@ -513,6 +515,7 @@ This is to remove the password reveal button I think.
     object-fit: contain;
 
     padding: 8px;
+    padding-right: 0px;
     margin-right: 32px;
 
     cursor: pointer;
@@ -521,7 +524,7 @@ This is to remove the password reveal button I think.
 
 .header {
     position: fixed;
-    top: 80px;
+    top: 0px;
     z-index: 1000;
 
     height: 80px;
@@ -532,6 +535,8 @@ This is to remove the password reveal button I think.
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    transition: 0.1s ease-in;
 }
 
 .header .leftSection {
@@ -981,7 +986,7 @@ header .middleSection .navElement {
 
     position: fixed;
     left: calc(50% - 400px);
-    top: 128px;
+    top: 138px;
 
     z-index: 996;
 
@@ -2197,12 +2202,12 @@ footer .bottomSection .rightSection {
     }
 
     .toastNotification {
-        height: 232px;
+        height: auto;
         width: 500px;
     
         position: fixed;
         left: calc(50% - 250px);
-        top: 228px;
+        top: 138px;
     
         z-index: 996;
     
@@ -2227,8 +2232,8 @@ footer .bottomSection .rightSection {
     }
 
     .toastNotification .mainNotification .leftSection {
-        height: 100%;
-        width: 80%;
+        height: auto;
+        width: 100%;
     
         display: flex;
         justify-content: flex-start;
@@ -2240,13 +2245,24 @@ footer .bottomSection .rightSection {
     }
     
     .toastNotification .mainNotification .rightSection {
-        height: 100%;
-        width: auto;
+        height: auto;
+        width: 100%;
+
+        margin-top: 16px;
     
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
         align-items: flex-end;
+    }
+
+    .toastNotification .mainNotification .rightSection button {
+        margin-right: 16px;
+        margin-left: 0px;
+    }
+
+    .bannerNotif h3 {
+        font-size: 0.9em;
     }
 }
 
@@ -2256,11 +2272,11 @@ footer .bottomSection .rightSection {
         width: 100%;
     
         left: 0px;
-        bottom: 64px;
+        bottom: 0px;
     }
 
     .toastNotification {
-        height: 232px;
+        height: auto;
         width: 100%;
         left: 0px;
     }
