@@ -200,3 +200,171 @@ function createBannerNotification(text) {
 setTimeout(function() {
   createBannerNotification("Please remember, this site is a work in progress!");
 }, 5000);
+
+/* Toast notifications */
+
+// thank u https://www.youtube.com/watch?v=Q_X-I-aziZY
+
+const infoNotification = document.createElement("div");
+const questionNotification = document.createElement("div");
+
+let toastNotificationBox = document.getElementById("toastNotificationBox");
+
+const notificationTypes = [
+    infoNotification, questionNotification
+]
+
+notificationTypes.forEach(n => {
+    n.classList.add("toastNotification");
+})
+
+infoNotification.classList.add("infoNotification");
+questionNotification.classList.add("questionNotification")
+
+function toast(type, alert, text) {
+    return new Promise((resolve) => {
+        let image;
+        let id;
+
+        if(alert === true) {
+            image = "images/icons/exclamationDark.png";
+        } else if(alert === false) {
+            image = "images/icons/checkmarkDark.png";
+        }
+
+        if(type === "notification") {
+
+            infoNotification.innerHTML = 
+`<div class="computerHeader">
+<h5>Notification</h5>
+<img src="images/icons/closeDark.png" class="notificationCloseIcon">
+</div>
+<div class="mainNotification">
+<div class="leftSection">
+<img src="${image}">
+<h2 class="titleWhiteText">${text}</h2>
+</div>
+<div class="rightSection">
+</div>
+</div>`;
+
+            id = 0
+        } else if (type === "question") {
+
+            questionNotification.innerHTML = 
+`<div class="computerHeader">
+<h5>Notification</h5>
+</div>
+<div class="mainNotification">
+<div class="leftSection">
+<img src="${image}">
+<h2 class="titleWhiteText">${text}</h2>
+</div>
+<div class="rightSection">
+<button class="smallBlackButton toastNoButton">Yes</button>
+<button class="smallBlackButton toastYesButton">No</button>
+</div>
+</div>`
+
+            id = 1
+        }
+        const element = notificationTypes[id].cloneNode(true);
+        toastNotificationBox.appendChild(element);
+
+        if(type != "question") {
+            resolve(true)
+        }
+
+        let noButton = element.querySelector(".toastNoButton");
+        noButton.addEventListener("click", e => {
+            resolve(false)
+            e.target.parentElement.parentElement.parentElement.remove();
+        });
+
+        let yesButton = element.querySelector(".toastYesButton");
+        yesButton.addEventListener("click", e => {
+            resolve(true)
+            e.target.parentElement.parentElement.parentElement.remove();
+        });
+    });
+
+}
+
+window.addEventListener("click", e => {
+    if(e.target.classList.contains("notificationCloseIcon")) {
+        e.target.parentElement.parentElement.remove();
+    }
+});
+
+//toast("notification", true, "sup with the squad!");
+//toast("question", false, "Hello hihi suppp >:)");
+
+/* Cookie Notifications */
+
+const cookieButtonNotification = document.createElement("div");
+
+let cookiesNotificationBox = document.getElementById("cookiesNotificationBox");
+
+const cookieNotificationTypes = [
+  cookieButtonNotification,
+]
+
+cookieNotificationTypes.forEach(n => {
+    n.classList.add("cookiesNotification");
+})
+
+cookieButtonNotification.classList.add("cookieButtonNotification");
+
+function cookieNotification(type, title, text) {
+  return new Promise((resolve) => {
+      let id;
+
+      if(type === "cookies") {
+
+        cookieButtonNotification.innerHTML = 
+`<div class="computerHeader">
+<h5>Notification</h5>
+<img src="images/icons/closeDark.png" class="cookieNotificationCloseIcon">
+</div>
+<div class="mainNotification">
+<h2 class="titleWhiteText">${title}</h2>
+<h3 class="basicWhiteText">${text}</h3>
+<div class="buttonsBox">
+<button class="blackButton cookieNoButton">Cookie Settings</button>
+<button class="blackButton cookieYesButton">Close</button>
+</div>
+</div>`;
+
+          id = 0
+      }
+
+      const element = cookieNotificationTypes[id].cloneNode(true);
+      cookiesNotificationBox.appendChild(element);
+
+      if(type != "cookies") {
+          resolve(true)
+      }
+
+      let noButton = element.querySelector(".cookieNoButton");
+      noButton.addEventListener("click", e => {
+          resolve(false)
+          e.target.parentElement.parentElement.parentElement.remove();
+      });
+
+      let yesButton = element.querySelector(".cookieYesButton");
+      yesButton.addEventListener("click", e => {
+          resolve(true)
+          e.target.parentElement.parentElement.parentElement.remove();
+      });
+  });
+
+}
+
+window.addEventListener("click", e => {
+  if(e.target.classList.contains("cookieNotificationCloseIcon")) {
+      e.target.parentElement.parentElement.remove();
+  }
+});
+
+//cookieNotification("cookies", "Hello!", "This site may use cookies!");
+//cookieNotification("cookies", "SUPPP!", "This site may use cookies!");
