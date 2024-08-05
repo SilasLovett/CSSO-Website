@@ -100,9 +100,19 @@ let mobileNavBackButton = document.getElementById("mobileNavBackButton");
 
 clickableMobileLinks.forEach(link => {
   link.addEventListener('click', () => {
+    if(link.classList.contains("active")) {
 
-    extraLinks.style.left = "0";
-    mainLinks.style.left = "-100%";
+      link.querySelector(".rotatableImage").style.transform = "rotate(180deg)";
+      link.classList.remove("active");
+      link.parentElement.querySelector(".mobileContainer").style.display = "none";
+
+    } else {
+
+      link.querySelector(".rotatableImage").style.transform = "rotate(270deg)";
+      link.classList.add("active");
+      link.parentElement.querySelector(".mobileContainer").style.display = "flex";
+
+    }
 
   });
 })
@@ -189,12 +199,14 @@ let header = document.getElementById("header");
 bannerNotificationClose.addEventListener('click', () => {
   bannerNotification.style.top = "-48px";
   header.style.top = "0px";
+  mobileNav.style.paddingTop = "0px";
 });
 
 function createBannerNotification(text) {
   bannerNotificationText.innerText = text;
   bannerNotification.style.top = "0px";
   header.style.top = "48px";
+  mobileNav.style.paddingTop = "96px";
 }
 
 setTimeout(function() {
