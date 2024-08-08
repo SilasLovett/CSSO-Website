@@ -117,13 +117,6 @@ clickableMobileLinks.forEach(link => {
   });
 })
 
-mobileNavBackButton.addEventListener('click', () => {
-
-  extraLinks.style.left = "100%";
-  mainLinks.style.left = "0";
-
-});
-
 
 // CSS EDITOR
 
