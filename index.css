@@ -703,7 +703,7 @@ header .middleSection .navElement {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 
     transition: 0.1s ease-in-out;
@@ -731,7 +731,7 @@ header .middleSection .navElement {
     animation-fill-mode: forwards;
 }
 
-.mobileNav .searchSection {
+.mobileNav .accountSection {
     height: auto;
     width: 100%;
 
@@ -739,6 +739,34 @@ header .middleSection .navElement {
 
     padding-left: 32px;
     padding-right: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobileNav .accountSection .accountBox {
+    position: relative;
+
+    width: 100%;
+    height: 80px;
+
+    border: 2px solid var(--pink);
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobileNav .searchSection {
+    height: auto;
+    width: 100%;
+
+    padding: 32px;
+
+    padding-top: 16px;
 
     display: flex;
     justify-content: center;
@@ -864,13 +892,45 @@ header .middleSection .navElement {
     border-bottom: 2px solid var(--mainLightGray);
 }
 
-.mobileNav .mainLinks .firstLink {
-    border-top: 2px solid var(--mainLightGray);
+.mobileNav .mainLinks .accountLink {
+    position: relative;
+
+    height: 60px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    cursor: pointer;
+
+    background: linear-gradient(135deg, var(--buttonBlue), var(--buttonGreen));
+}
+
+.mobileNav .mainLinks .accountLink h2 {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--size6);
+    color: var(--mainBlack);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    transition: 0.05s ease-in;
 }
 
 
 
-.mobileNav .mainLinks .mobileLink img {
+.mobileNav .mainLinks .rotatableImage {
     height: 30px;
     width: 30px;
 
@@ -880,6 +940,11 @@ header .middleSection .navElement {
     margin-right: 8px;
 
     transition: 0.1s ease-in;
+}
+
+.mobileNav .mainLinks .accountLink .rotatableImage {
+    height: 33px;
+    width: 33px;
 }
 
 .mobileNav .mainLinks .mobileLink h2 {
@@ -2346,6 +2411,72 @@ footer .bottomSection .rightSection {
     
         pointer-events: none;
 
+    }
+
+    main .hero {
+        position: relative;
+    
+        width: 100%;
+    
+        height: 85vh;
+        height: 85svh;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    
+        border-bottom: 2px solid #000000;
+    }
+}
+
+@media (max-height: 650px) {
+    main .hero .leftSection {
+        position: relative;
+    
+        height: 100%;
+        width: 10%;
+    
+        pointer-events: none;
+    }
+    
+    main .hero .rightSection {
+        position: relative;
+    
+        height: 100%;
+        width: 90%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    
+        padding: 64px;
+
+        padding-bottom: 32px;
+    
+        pointer-events: none;
+
+    }
+
+    main .descriptionSection {
+        margin-top: 16px;
+    }
+
+    main .hero {
+        height: 90vh;
+        height: 90svh;
+    }
+}
+
+@media (max-height: 590px) {
+    :root {
+        --size4: 0.6417em;
+        --size5: 1.000em;
+        --size6: 1.7416em;
+        --size7: 3.5em;
+        --size8: 3.5em;
+        --size9: 3.5em;
     }
 }
 

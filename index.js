@@ -199,7 +199,7 @@ function createBannerNotification(text) {
   bannerNotificationText.innerText = text;
   bannerNotification.style.top = "0px";
   header.style.top = "48px";
-  mobileNav.style.paddingTop = "96px";
+  mobileNav.style.paddingTop = "48px";
 }
 
 setTimeout(function() {
