@@ -81,9 +81,6 @@ navElements.forEach(link => {
 let mobileNavButton = document.getElementById("mobileNavButton");
 let mobileNav = document.getElementById("mobileNav");
 
-let extraLinks = document.getElementById("extraLinks");
-let mainLinks = document.getElementById("mainLinks");
-
 mobileNavButton.addEventListener('click', () => {
   if(mobileNav.classList.contains("mobileNavOpen")) {
     mobileNav.classList.remove("mobileNavOpen");
@@ -95,27 +92,24 @@ mobileNavButton.addEventListener('click', () => {
 
 });
 
-let clickableMobileLinks = document.querySelectorAll(".clickableMobileLink");
-let mobileNavBackButton = document.getElementById("mobileNavBackButton");
+let clickableMenuLinks = document.querySelectorAll(".clickableMenuLink");
+let clickableBackLinks = document.querySelectorAll(".clickableBackLink");
+let extraLinks = document.getElementById("extraLinks");
+let mainLinks = document.getElementById("mainLinks");
 
-clickableMobileLinks.forEach(link => {
+clickableMenuLinks.forEach(link => {
   link.addEventListener('click', () => {
-    if(link.classList.contains("active")) {
-
-      link.querySelector(".rotatableImage").style.transform = "rotate(180deg)";
-      link.classList.remove("active");
-      link.parentElement.querySelector(".mobileContainer").style.display = "none";
-
-    } else {
-
-      link.querySelector(".rotatableImage").style.transform = "rotate(270deg)";
-      link.classList.add("active");
-      link.parentElement.querySelector(".mobileContainer").style.display = "flex";
-
-    }
-
+    mainLinks.style.left = "-100%";
+    extraLinks.style.left = "0%";
   });
-})
+});
+
+clickableBackLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mainLinks.style.left = "0%";
+    extraLinks.style.left = "100%";
+  });
+});
 
 
 // CSS EDITOR

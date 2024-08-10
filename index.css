@@ -735,10 +735,7 @@ header .middleSection .navElement {
     height: auto;
     width: 100%;
 
-    padding: 16px;
-
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 32px;
 
     display: flex;
     justify-content: center;
@@ -839,11 +836,26 @@ header .middleSection .navElement {
     vertical-align: middle;
 }
 
-.mobileNav .mainLinks {
+
+.mobileNav .navigationSection {
     position: relative;
 
     height: auto;
     flex-grow: 1;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    transition: 0.2s ease-out;
+}
+
+.mobileNav .navigationSection .mainLinks {
+    position: absolute;
+
+    height: auto;
     width: 100%;
 
     left: 0;
@@ -856,23 +868,23 @@ header .middleSection .navElement {
     transition: 0.2s ease-out;
 }
 
-.mobileNav .mainLinks .linkCollection {
+.mobileNav .navigationSection .extraLinks {
+    position: absolute;
+
+    height: 100%;
     width: 100%;
-    height: auto;
+
+    left: 100%;
 
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    transition: 0.2s ease-out;
 }
 
-.mobileNav .mainLinks .linkCollection .mobileContainer {
-    width: 100%;
-    height: auto;
-
-    display: none;
-    flex-direction: column;
-}
-
-.mobileNav .mainLinks .mobileLink {
+.mobileNav .navigationSection .mobileLink {
     position: relative;
 
     height: 60px;
@@ -888,49 +900,17 @@ header .middleSection .navElement {
     padding-right: 32px;
 
     cursor: pointer;
+}
 
+.mobileNav .navigationSection .borderBottom {
     border-bottom: 2px solid var(--mainLightGray);
 }
 
-.mobileNav .mainLinks .accountLink {
-    position: relative;
-
-    height: 60px;
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 8px;
-    padding-left: 32px;
-    padding-right: 32px;
-
-    cursor: pointer;
-
-    background: linear-gradient(135deg, var(--buttonBlue), var(--buttonGreen));
+.mobileNav .navigationSection .borderTop {
+    border-top: 2px solid var(--mainLightGray);
 }
 
-.mobileNav .mainLinks .accountLink h2 {
-    text-decoration: none;
-    font-weight: 500;
-    font-size: var(--size6);
-    color: var(--mainBlack);
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
-
-    transition: 0.05s ease-in;
-}
-
-
-
-.mobileNav .mainLinks .rotatableImage {
+.mobileNav .navigationSection .clickableImage {
     height: 30px;
     width: 30px;
 
@@ -942,12 +922,16 @@ header .middleSection .navElement {
     transition: 0.1s ease-in;
 }
 
-.mobileNav .mainLinks .accountLink .rotatableImage {
+.mobileNav .navigationSection .accountLink .clickableImage {
     height: 33px;
     width: 33px;
 }
 
-.mobileNav .mainLinks .mobileLink h2 {
+.mobileNav .navigationSection .backwardsClickableImage {
+    transform: rotate(0deg);
+}
+
+.mobileNav .navigationSection .mobileLink h2 {
     text-decoration: none;
     font-weight: 400;
     font-size: var(--size6);
@@ -963,31 +947,24 @@ header .middleSection .navElement {
     transition: 0.05s ease-in;
 }
 
-.mobileNav .mainLinks .linkCollection .mobileContainer .mobileLink h2 {
-    text-decoration: none;
-    font-weight: 400;
-    font-size: calc(var(--size6) - 0.25em);
-    color: var(--mainLightGray);
-
-    padding-left: 32px;
-
-    font-family: Inconsolata;
-    font-family: "Inconsolata", monospace;
-    font-optical-sizing: auto;
-    font-style: normal;
-
-    vertical-align: middle;
-
-    transition: 0.05s ease-in;
-}
-
-.mobileNav .mainLinks .mobileLink:hover h2 {
+.mobileNav .navigationSection .mobileLink:hover h2 {
     color: var(--pink);
 }
 
-.mobileNav .mainLinks .linkCollection .mobileContainer .mobileLink:hover h2 {
-    color: var(--pink);
+.mobileNav .navigationSection .color1 {
+    background: linear-gradient(135deg, var(--buttonBlue), var(--buttonGreen));
 }
+
+.mobileNav .navigationSection .color1 h2 {
+    font-weight: 500;
+    color: var(--mainBlack);
+}
+
+.mobileNav .navigationSection .color1:hover h2 {
+    font-weight: 500;
+    color: var(--mainBlack);
+}
+
 
 
 
@@ -2382,7 +2359,7 @@ footer .bottomSection .rightSection {
 
 @media only screen and (orientation: portrait) {
     .mobileNav {
-        height: calc(100svh);
+        height: calc(100lvh - 80px);
     }
 }
 
