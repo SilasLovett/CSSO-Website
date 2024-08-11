@@ -130,10 +130,14 @@ linksMap.set('Default', [
   {title: "404"},
 ]);
 
+let extraLinksActive = false;
+
 clickableMenuLinks.forEach(link => {
   link.addEventListener('click', () => {
     mainLinks.style.left = "-100%";
     extraLinks.style.left = "0%";
+
+    extraLinksActive = true;
 
     let linkChoice = link.querySelector(".titleWhiteText").innerText;
     let links = [];
@@ -181,15 +185,78 @@ clickableMenuLinks.forEach(link => {
 
     clickableBackLinks = extraLinks.querySelectorAll(".clickableBackLink");
 
+    updateMobileNavSearch();
+
     clickableBackLinks.forEach(link => {
       link.addEventListener('click', () => {
         mainLinks.style.left = "0%";
         extraLinks.style.left = "100%";
+        extraLinksActive = false;
+        updateMobileNavSearch();
       });
     });
 
   });
 });
+
+let mobileNavSearch = document.getElementById("mobileNavSearch");
+
+mobileNavSearch.addEventListener("input", () => {
+  updateMobileNavSearch();
+});
+
+function updateMobileNavSearch() {
+  let query = mobileNavSearch.value.toLowerCase();
+
+  let mainLinksGoals = Array.from(mainLinks.querySelectorAll(".titleWhiteText"));
+
+  mainLinksGoals.forEach(item => {
+    item.style.color = "";
+  });
+
+  let extraLinksGoals = Array.from(extraLinks.querySelectorAll(".titleWhiteText"));
+
+  extraLinksGoals.forEach(item => {
+    item.style.color = "";
+  });
+
+  if(query === "") {
+    return;
+  }
+
+  if(!extraLinksActive) {
+    let filtered = mainLinksGoals.filter(item => item.innerText.toLowerCase().includes(query));
+
+    linksMap.forEach((value, key) => {
+      let filtered = value.filter(item => item.title.toLowerCase().includes(query));
+      if(filtered.length > 0) {
+        mainLinksGoals.filter(item => item.innerText.includes(key)).forEach(item => {
+          item.style.color = "red";
+        })
+      }
+    });
+
+    filtered.forEach(item => {
+      item.style.color = "red";
+    });
+
+  } else {
+    let filtered = extraLinksGoals.filter(item => item.innerText.toLowerCase().includes(query));
+
+    filtered.forEach(item => {
+      item.style.color = "red";
+    });
+  }
+};
+
+/*let items = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape'];
+let filteredItems = items.filter(item => item.toLowerCase().includes(query));
+
+filteredItems.forEach(item => {
+    let div = document.createElement('div');
+    div.textContent = item;
+    results.appendChild(div);
+});*/
 
 
 // CSS EDITOR
