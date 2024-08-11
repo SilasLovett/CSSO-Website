@@ -101,8 +101,34 @@ let mainLinks = document.getElementById("mainLinks");
 
 let linksMap = new Map();
 
-linksMap.set('Get Started', 'get started');
-linksMap.set('Default', 'ememem');
+linksMap.set('Get Started', [
+  {title: "Learn More"},
+  {title: "Log in"},
+  {title: "Sign Up"},
+]);
+
+linksMap.set('Curriculums', [
+  {title: "Curriculum List"},
+  {title: "Intro to Programming"},
+  {title: "Development Courses"},
+  {title: "Competitive Courses"},
+  {title: "Learning Paths"},
+  {title: "How to Use"},
+  {title: "Suggestions"},
+]);
+
+linksMap.set('Club Resources', [
+  {title: "Websites"},
+  {title: "Slideshows"},
+  {title: "Meeting Resources"},
+  {title: "Merch Information"},
+  {title: "Contact Us"},
+]);
+
+linksMap.set('Default', [
+  {title: "Unknown Link"},
+  {title: "404"},
+]);
 
 clickableMenuLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -110,11 +136,29 @@ clickableMenuLinks.forEach(link => {
     extraLinks.style.left = "0%";
 
     let linkChoice = link.querySelector(".titleWhiteText").innerText;
+    let links = [];
+
+    let color;
+
+    switch (linkChoice) {
+      case "Get Started":
+        color = "color1";
+        break;
+      case "Curriculums":
+        color = "color2";
+        break;
+      case "Club Resources":
+        color = "color3";
+        break;
+      default:
+        color = "color1";
+        break;
+    }
 
     if(linksMap.has(linkChoice)) {
-      console.log(linksMap.get(linkChoice));
+      links = linksMap.get(linkChoice);
     } else {
-      console.log(linksMap.get("Default"));
+      links = linksMap.get("Default");
     }
 
     extraLinks.innerHTML = `
@@ -123,17 +167,17 @@ clickableMenuLinks.forEach(link => {
     <img src="images/icons/backarrow.png" class="clickableImage backwardsClickableImage">
 </div>
 
-<div class="mobileLink color1">
-    <h2 class="titleWhiteText darkText">Getting Started</h2>
-</div>
-
-<div class="mobileLink borderBottom">
-    <h2 class="titleWhiteText">Something Else</h2>
-</div>
-
-<div class="mobileLink borderBottom">
-    <h2 class="titleWhiteText">Wheeeeeeee!!!</h2>
+<div class="mobileLink ${color}">
+    <h2 class="titleWhiteText darkText">${linkChoice}</h2>
 </div>`
+
+    links.forEach(link => {
+      extraLinks.innerHTML += `
+<div class="mobileLink borderBottom">
+    <h2 class="titleWhiteText">${link.title}</h2>
+</div>
+      `
+    });
 
     clickableBackLinks = extraLinks.querySelectorAll(".clickableBackLink");
 

@@ -866,6 +866,8 @@ header .middleSection .navElement {
     align-items: flex-start;
 
     transition: 0.2s ease-out;
+
+    overflow-y: scroll;
 }
 
 .mobileNav .navigationSection .extraLinks {
@@ -882,6 +884,8 @@ header .middleSection .navElement {
     align-items: flex-start;
 
     transition: 0.2s ease-out;
+
+    overflow-y: scroll;
 }
 
 .mobileNav .navigationSection .mobileLink {
@@ -900,6 +904,8 @@ header .middleSection .navElement {
     padding-right: 32px;
 
     cursor: pointer;
+
+    flex-shrink: 0;
 }
 
 .mobileNav .navigationSection .borderBottom {
@@ -955,14 +961,29 @@ header .middleSection .navElement {
     background: linear-gradient(135deg, var(--buttonBlue), var(--buttonGreen));
 }
 
-.mobileNav .navigationSection .color1 h2 {
+.mobileNav .navigationSection .color2 {
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+.mobileNav .navigationSection .color3 {
+    background: linear-gradient(135deg, #03001e, #7303c0, #ec38bc, #fdeff9);
+}
+
+.mobileNav .navigationSection .color1 h2,
+.mobileNav .navigationSection .color2 h2 {
     font-weight: 500;
     color: var(--mainBlack);
 }
 
-.mobileNav .navigationSection .color1:hover h2 {
+.mobileNav .navigationSection .color3:hover h2 {
     font-weight: 500;
     color: var(--mainBlack);
+}
+
+.mobileNav .navigationSection .color1:hover h2,
+.mobileNav .navigationSection .color2:hover h2 {
+    font-weight: 500;
+    color: var(--mainOffWhite);
 }
 
 
@@ -2368,12 +2389,6 @@ footer .bottomSection .rightSection {
     }
 }
 
-@media only screen and (orientation: portrait) {
-    .mobileNav {
-        height: calc(100lvh - 80px);
-    }
-}
-
 @media (max-height: 850px) {
     main .hero .leftSection {
         position: relative;
@@ -2470,6 +2485,13 @@ footer .bottomSection .rightSection {
         padding-bottom: 16px;
     
         pointer-events: none;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    .mobileNav {
+        height: calc(100lvh - 80px);
+        padding-bottom: calc(calc(100lvh - 80px) - calc(100svh - 80px));
     }
 }
 
