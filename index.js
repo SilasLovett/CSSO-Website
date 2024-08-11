@@ -93,21 +93,57 @@ mobileNavButton.addEventListener('click', () => {
 });
 
 let clickableMenuLinks = document.querySelectorAll(".clickableMenuLink");
-let clickableBackLinks = document.querySelectorAll(".clickableBackLink");
+
+let clickableBackLinks;
+
 let extraLinks = document.getElementById("extraLinks");
 let mainLinks = document.getElementById("mainLinks");
+
+let linksMap = new Map();
+
+linksMap.set('Get Started', 'get started');
+linksMap.set('Default', 'ememem');
 
 clickableMenuLinks.forEach(link => {
   link.addEventListener('click', () => {
     mainLinks.style.left = "-100%";
     extraLinks.style.left = "0%";
-  });
-});
 
-clickableBackLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    mainLinks.style.left = "0%";
-    extraLinks.style.left = "100%";
+    let linkChoice = link.querySelector(".titleWhiteText").innerText;
+
+    if(linksMap.has(linkChoice)) {
+      console.log(linksMap.get(linkChoice));
+    } else {
+      console.log(linksMap.get("Default"));
+    }
+
+    extraLinks.innerHTML = `
+<div class="mobileLink clickableBackLink borderTop">
+    <h2 class="titleWhiteText"> Go Back</h2>
+    <img src="images/icons/backarrow.png" class="clickableImage backwardsClickableImage">
+</div>
+
+<div class="mobileLink color1">
+    <h2 class="titleWhiteText darkText">Getting Started</h2>
+</div>
+
+<div class="mobileLink borderBottom">
+    <h2 class="titleWhiteText">Something Else</h2>
+</div>
+
+<div class="mobileLink borderBottom">
+    <h2 class="titleWhiteText">Wheeeeeeee!!!</h2>
+</div>`
+
+    clickableBackLinks = extraLinks.querySelectorAll(".clickableBackLink");
+
+    clickableBackLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainLinks.style.left = "0%";
+        extraLinks.style.left = "100%";
+      });
+    });
+
   });
 });
 

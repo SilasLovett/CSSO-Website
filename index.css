@@ -2141,6 +2141,17 @@ footer .bottomSection .rightSection {
     }
 }
 
+@media (max-height: 590px) {
+    :root {
+        --size4: 0.6417em;
+        --size5: 1.000em;
+        --size6: 1.7416em;
+        --size7: 3.5em;
+        --size8: 3.5em;
+        --size9: 3.5em;
+    }
+}
+
 @media (max-width: 1032px) {
     main .gridSection {
         position: relative;
@@ -2407,56 +2418,6 @@ footer .bottomSection .rightSection {
     }
 }
 
-@media (max-height: 650px) {
-    main .hero .leftSection {
-        position: relative;
-    
-        height: 100%;
-        width: 10%;
-    
-        pointer-events: none;
-    }
-    
-    main .hero .rightSection {
-        position: relative;
-    
-        height: 100%;
-        width: 90%;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-    
-        padding: 64px;
-
-        padding-bottom: 32px;
-    
-        pointer-events: none;
-
-    }
-
-    main .descriptionSection {
-        margin-top: 16px;
-    }
-
-    main .hero {
-        height: 90vh;
-        height: 90svh;
-    }
-}
-
-@media (max-height: 590px) {
-    :root {
-        --size4: 0.6417em;
-        --size5: 1.000em;
-        --size6: 1.7416em;
-        --size7: 3.5em;
-        --size8: 3.5em;
-        --size9: 3.5em;
-    }
-}
-
 @media (max-width: 932px) {
     main .hero .leftSection {
         height: 100%;
@@ -2470,6 +2431,45 @@ footer .bottomSection .rightSection {
         justify-content: flex-end;
 
         padding: 48px;
+    }
+}
+
+@media (max-width: 500px) {
+    main .descriptionSection {
+        margin-top: 0px;
+    }
+
+    main {
+        padding-top: 16px;
+    }
+
+    main .hero {
+        height: 90vh;
+        height: 90svh;
+    }
+
+    main .hero .rightSection p {
+        width: 100%;
+    }
+
+    main .hero .rightSection {
+        position: relative;
+    
+        height: 100%;
+        width: 90%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    
+        padding: 64px;
+
+        padding-left: 32px;
+
+        padding-bottom: 16px;
+    
+        pointer-events: none;
     }
 }
 
