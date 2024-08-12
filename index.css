@@ -666,6 +666,100 @@ header .middleSection .navElement {
     padding-bottom: 16px;
 }
 
+.header .rightSection .accountBlock {
+    position: relative;
+
+    height: 100%;
+    width: 200px;
+
+    background: linear-gradient(45deg, var(--buttonGreen), var(--buttonBlue));
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 4px;
+
+    min-width: fit-content;
+}
+
+.header .rightSection .accountBlock img {
+    height: 100%;
+    aspect-ratio: 1;
+
+    border-radius: 9px;
+
+    object-fit: cover;
+
+    margin-right: 8px;
+}
+
+.header .rightSection .accountBlock h3 {
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainBlack);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    margin-right: 8px;
+
+    transition: 0.15s ease-in-out;
+}
+
+.header .rightSection .accountBlock:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    box-shadow: 0.25em -0.25em 1em 0 var(--buttonBlue), -0.25em 0.25em 1em 0 var(--buttonGreen);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.header .rightSection .accountBlock:hover::after {
+    opacity: 0.75;
+}
+
+.header .rightSection .accountBlock:hover h3 {
+    color: var(--mainOffWhite);
+}
+
+.accountBox {
+    position: fixed;
+    z-index: 993;
+    height: 200px;
+    width: 400px;
+
+    top: 112px;
+    right: -432px;
+
+    background-color: var(--mainBlack);
+
+    border: 2px solid var(--mainOffWhite);
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    transition: 0.1s ease-in-out;
+}
+
 
 
 
