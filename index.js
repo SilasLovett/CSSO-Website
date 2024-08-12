@@ -81,13 +81,40 @@ navElements.forEach(link => {
 let mobileNavButton = document.getElementById("mobileNavButton");
 let mobileNav = document.getElementById("mobileNav");
 
+let mobileNavButtonSpan1 = document.getElementById("mobileNavButtonSpan1");
+let mobileNavButtonSpan2 = document.getElementById("mobileNavButtonSpan2");
+let mobileNavButtonSpan3 = document.getElementById("mobileNavButtonSpan3");
+
 mobileNavButton.addEventListener('click', () => {
   if(mobileNav.classList.contains("mobileNavOpen")) {
     mobileNav.classList.remove("mobileNavOpen");
     mobileNav.classList.add("mobileNavClose");
+
+    mobileNavButton.style.transform = "rotate(0deg)";
+
+    mobileNavButtonSpan1.style.transform = "rotate(0deg)";
+    mobileNavButtonSpan3.style.transform = "rotate(0deg)";
+
+    setTimeout(() => {
+      mobileNavButtonSpan2.style.display = "block";
+      mobileNavButtonSpan1.style.top = "0%";
+      mobileNavButtonSpan3.style.top = "calc(100% - 4px)";
+    }, 125);
+
   } else {
     mobileNav.classList.remove("mobileNavClose");
     mobileNav.classList.add("mobileNavOpen");
+
+    mobileNavButton.style.transform = "rotate(180deg)";
+
+    mobileNavButtonSpan1.style.top = "calc(50% - 2px)";
+    mobileNavButtonSpan3.style.top = "calc(50% - 2px)";
+
+    setTimeout(() => {
+      mobileNavButtonSpan2.style.display = "none";
+      mobileNavButtonSpan1.style.transform = "rotate(45deg)";
+      mobileNavButtonSpan3.style.transform = "rotate(-45deg)";
+    }, 125);
   }
 
 });

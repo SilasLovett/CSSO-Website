@@ -604,16 +604,53 @@ header .middleSection .navElement {
     color: var(--pink);
 }
 
-.header .middleSection img {
-    height: 100%;
-    aspect-ratio: 1;
-    object-fit: contain;
+.header .middleSection .menuIcon {
+    position: relative;
+
+    height: 45%;
+    aspect-ratio: 1.25;
+
+    overflow: hidden;
 
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
     cursor: pointer;
 
-    padding: 18px;
+    margin-right: 32px;
+
+    transition: 0.325s ease-out;
+}
+
+.header .middleSection .menuIcon span {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: var(--mainOffWhite);
+    border-radius: 100px;
+}
+
+.header .middleSection .menuIcon .span1 {
+    top: 0;
+    left: 0;
+
+    transition: 0.1s ease-out;
+}
+
+.header .middleSection .menuIcon .span2 {
+    top: calc(50% - 2px);
+    left: 0;
+
+    transition: 0.1s ease-out;
+}
+
+.header .middleSection .menuIcon .span3 {
+    top: calc(100% - 4px);
+    left: 0;
+
+    transition: 0.1s ease-out;
 }
 
 .header .rightSection {
@@ -2126,8 +2163,8 @@ footer .bottomSection .rightSection {
         justify-content: flex-end;
     }
 
-    .header .middleSection img {
-        display: block;
+    .header .middleSection .menuIcon {
+        display: flex;
     }
 
     main .hero .leftSection {
