@@ -557,6 +557,54 @@ This is to remove the password reveal button I think.
     cursor: pointer;
 }
 
+.header .leftSection .menuIcon {
+    position: relative;
+
+    height: 60%;
+    aspect-ratio: 1.25;
+
+    overflow: hidden;
+
+    display: block;
+
+    cursor: pointer;
+
+    margin-left: 32px;
+
+    transition: 0.325s ease-out;
+}
+
+.header .leftSection .menuIcon span {
+    position: absolute;
+
+    height: 4px;
+    width: 100%;
+
+    background-color: var(--mainOffWhite);
+    border-radius: 100px;
+}
+
+.header .leftSection .menuIcon .span1 {
+    top: 0;
+    left: 0;
+
+    transition: 0.1s ease-out;
+}
+
+.header .leftSection .menuIcon .span2 {
+    top: calc(50% - 2px);
+    left: 0;
+
+    transition: 0.1s ease-out;
+}
+
+.header .leftSection .menuIcon .span3 {
+    top: calc(100% - 4px);
+    left: 0;
+
+    transition: 0.1s ease-out;
+}
+
 .header .middleSection {
     height: 100%;
     width: 60%;
@@ -604,62 +652,14 @@ header .middleSection .navElement {
     color: var(--pink);
 }
 
-.header .middleSection .menuIcon {
-    position: relative;
-
-    height: 45%;
-    aspect-ratio: 1.25;
-
-    overflow: hidden;
-
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    cursor: pointer;
-
-    margin-right: 32px;
-
-    transition: 0.325s ease-out;
-}
-
-.header .middleSection .menuIcon span {
-    position: absolute;
-    height: 4px;
-    width: 100%;
-    background-color: var(--mainOffWhite);
-    border-radius: 100px;
-}
-
-.header .middleSection .menuIcon .span1 {
-    top: 0;
-    left: 0;
-
-    transition: 0.1s ease-out;
-}
-
-.header .middleSection .menuIcon .span2 {
-    top: calc(50% - 2px);
-    left: 0;
-
-    transition: 0.1s ease-out;
-}
-
-.header .middleSection .menuIcon .span3 {
-    top: calc(100% - 4px);
-    left: 0;
-
-    transition: 0.1s ease-out;
-}
-
 .header .rightSection {
+    position: relative;
     height: 100%;
     width: 20%;
 
     display: flex;
     justify-content: flex-end;
-    align-content: center;
+    align-items: center;
 
     padding-right: 32px;
     padding-top: 16px;
@@ -1052,7 +1052,7 @@ header .middleSection .navElement {
     align-items: center;
 }
 
-.mobileNav .accountSection .accountBox {
+.mobileNav .accountSection .accountContainer {
     position: relative;
 
     width: 100%;
@@ -1083,8 +1083,8 @@ header .middleSection .navElement {
 .mobileNav .searchSection .searchBar {
     position: relative;
 
-    width: 100%;
     height: 64px;
+    aspect-ratio: 1;
 
     border: 2px solid var(--mainOffWhite);
 
@@ -1094,7 +1094,9 @@ header .middleSection .navElement {
     justify-content: space-between;
     align-items: center;
 
-    flex-grow: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
+
     margin-right: 16px;
 }
 
@@ -1149,18 +1151,54 @@ header .middleSection .navElement {
     vertical-align: middle;
 }
 
-.mobileNav .searchSection .mobileProfilePicImage {
+.mobileNav .searchSection .mobileAccountBlock {
     height: 64px;
     aspect-ratio: 1;
 
-    object-fit: cover;
-
-    border: 2px solid var(--mainOffWhite);
     border-radius: 10px;
+
+    background: linear-gradient(45deg, var(--buttonGreen), var(--buttonBlue));
 
     cursor: pointer;
 
     flex-shrink: 0;
+    flex-grow: 1;
+
+    padding: 6px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mobileNav .searchSection .mobileAccountBlock img {
+    height: 100%;
+    aspect-ratio: 1;
+
+    border-radius: 8px;
+
+    object-fit: cover;
+
+    margin-right: 12px
+}
+
+.mobileNav .searchSection .mobileAccountBlock h3 {
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainBlack);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    margin-right: 8px;
+
+    transition: 0.15s ease-in-out;
 }
 
 
@@ -2441,20 +2479,22 @@ footer .bottomSection .rightSection {
     }
 
     .header .leftSection {
-        width: 50%;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header .middleSection {
+        display: none;
     }
 
     .header .rightSection {
         display: none;
     }
 
-    .header .middleSection {
-        width: 50%;
-        justify-content: flex-end;
-    }
-
-    .header .middleSection .menuIcon {
+    .header .leftSection .menuIcon {
         display: flex;
+        margin-right: 32px;
+        height: 80%;
     }
 
     main .hero .leftSection {
