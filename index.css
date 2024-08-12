@@ -739,7 +739,7 @@ header .middleSection .navElement {
 
 .accountBox {
     position: fixed;
-    z-index: 993;
+    z-index: 999;
     height: auto;
     width: 450px;
 
@@ -758,7 +758,7 @@ header .middleSection .navElement {
     justify-content: flex-start;
     align-items: center;
 
-    transition: 0.2s ease-in-out;
+    transition: 0.1s ease-in;
 }
 
 .accountBox .topSection {
@@ -810,7 +810,8 @@ header .middleSection .navElement {
     height: auto;
     width: 100%;
 
-    padding: 0px;
+    padding: 16px;
+    padding-top: 0px;
 
     display: flex;
     flex-direction: column;
@@ -818,15 +819,42 @@ header .middleSection .navElement {
     align-items: center;
 }
 
-.accountBox .centerSection .infoRow {
-    position: relative;
-
-    height: 20px;
+.accountBox .centerSection .bioBox {
+    height: auto;
     width: 100%;
 
-    border-top: 2px solid var(--mainLightGray);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin-bottom: 16px;
 }
 
+.accountBox .centerSection .infoBox {
+    height: auto;
+    width: 100%;
+
+    background-color: var(--mainOffWhite);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 16px;
+}
+
+.accountBox .centerSection .infoBox h3 {
+    margin-bottom: 0.5em;
+    font-size: var(--size4);
+    color: var(--mainBlack);
+}
+
+.accountBox .centerSection .infoBox h3:last-of-type {
+    margin-bottom: 0em;
+}
 
 .accountBox .bottomSection {
     position: relative;
@@ -839,14 +867,30 @@ header .middleSection .navElement {
     padding-top: 0px;
 
     display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.accountBox .bottomSection .buttonBox {
+    position: relative;
+
+    height: auto;
+    width: 55%;
+
+    margin-right: 16px;
+
+    padding-top: 0px;
+
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 }
 
-.accountBox .bottomSection .learnButton {
+.accountBox .bottomSection .buttonBox .learnButton {
     height: auto;
-    width: auto;
+    width: 100%;
 
     cursor: pointer;
 
@@ -877,8 +921,23 @@ header .middleSection .navElement {
     min-width: fit-content;
 }
 
-.accountBox .bottomSection .learnButton:hover {
+.accountBox .bottomSection .buttonBox .learnButton:hover {
     background: var(--pink);
+}
+
+.accountBox .bottomSection .goBack {
+    position: relative;
+
+    height: 130px;
+    width: calc(45% - 16px);
+
+    background: var(--mainOffWhite);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 
@@ -1017,7 +1076,7 @@ header .middleSection .navElement {
     padding-top: 16px;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -1034,6 +1093,9 @@ header .middleSection .navElement {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    flex-grow: 1;
+    margin-right: 16px;
 }
 
 .mobileNav .searchSection .searchBar input {
@@ -1085,6 +1147,20 @@ header .middleSection .navElement {
     font-style: normal;
 
     vertical-align: middle;
+}
+
+.mobileNav .searchSection .mobileProfilePicImage {
+    height: 64px;
+    aspect-ratio: 1;
+
+    object-fit: cover;
+
+    border: 2px solid var(--mainOffWhite);
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
 }
 
 
@@ -2698,6 +2774,10 @@ footer .bottomSection .rightSection {
 
         padding: 48px;
     }
+
+    .accountBox {
+        top: 192px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -2736,6 +2816,10 @@ footer .bottomSection .rightSection {
         padding-bottom: 16px;
     
         pointer-events: none;
+    }
+
+    .accountBox {
+        width: calc(100% - 64px);
     }
 }
 

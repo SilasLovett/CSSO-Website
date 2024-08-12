@@ -120,9 +120,18 @@ mobileNavButton.addEventListener('click', () => {
 });
 
 let accountBoxButton = document.getElementById("accountBoxButton");
+let mobileAccountBoxButton = document.getElementById("mobileAccountBoxButton");
 let accountBox = document.getElementById("accountBox");
 
 accountBoxButton.addEventListener('click', () => {
+  switchAccountBox();
+});
+
+mobileAccountBoxButton.addEventListener('click', () => {
+  switchAccountBox();
+});
+
+function switchAccountBox() {
   if(accountBox.classList.contains("accountBoxOpen")) {
     accountBox.classList.remove("accountBoxOpen");
     accountBox.style.right = "-482px";
@@ -130,7 +139,7 @@ accountBoxButton.addEventListener('click', () => {
     accountBox.classList.add("accountBoxOpen");
     accountBox.style.right = "32px";
   }
-});
+}
 
 let clickableMenuLinks = document.querySelectorAll(".clickableMenuLink");
 
@@ -374,6 +383,7 @@ bannerNotificationClose.addEventListener('click', () => {
   bannerNotification.style.top = "-48px";
   header.style.top = "0px";
   mobileNav.style.paddingTop = "0px";
+  accountBox.style.transform = "translateY(0px)";
 });
 
 function createBannerNotification(text) {
@@ -381,6 +391,7 @@ function createBannerNotification(text) {
   bannerNotification.style.top = "0px";
   header.style.top = "48px";
   mobileNav.style.paddingTop = "48px";
+  accountBox.style.transform = "translateY(48px)";
 }
 
 setTimeout(function() {
