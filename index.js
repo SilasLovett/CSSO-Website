@@ -125,7 +125,7 @@ let accountBox = document.getElementById("accountBox");
 accountBoxButton.addEventListener('click', () => {
   if(accountBox.classList.contains("accountBoxOpen")) {
     accountBox.classList.remove("accountBoxOpen");
-    accountBox.style.right = "-432px";
+    accountBox.style.right = "-482px";
   } else {
     accountBox.classList.add("accountBoxOpen");
     accountBox.style.right = "32px";

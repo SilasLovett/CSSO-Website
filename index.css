@@ -740,15 +740,16 @@ header .middleSection .navElement {
 .accountBox {
     position: fixed;
     z-index: 993;
-    height: 200px;
-    width: 400px;
+    height: auto;
+    width: 450px;
 
     top: 112px;
-    right: -432px;
+    right: -482px;
 
     background-color: var(--mainBlack);
 
     border: 2px solid var(--mainOffWhite);
+    border-radius: 10px;
 
     overflow: hidden;
 
@@ -757,9 +758,128 @@ header .middleSection .navElement {
     justify-content: flex-start;
     align-items: center;
 
-    transition: 0.1s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
+.accountBox .topSection {
+    position: relative;
+
+    height: auto;
+    width: 100%;
+
+    padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.accountBox .topSection img {
+    position: relative;
+
+    height: 100px;
+    aspect-ratio: 1;
+
+    border-radius: 7px;
+
+    object-fit: cover;
+
+    border: 2px solid var(--mainOffWhite);
+
+    margin-right: 16px;
+}
+
+.accountBox .topSection .nameBox {
+    position: relative;
+
+    height: 100%;
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.accountBox .topSection .nameBox h2 {
+    margin-bottom: 0.2em;
+}
+
+.accountBox .centerSection {
+    position: relative;
+
+    height: auto;
+    width: 100%;
+
+    padding: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.accountBox .centerSection .infoRow {
+    position: relative;
+
+    height: 20px;
+    width: 100%;
+
+    border-top: 2px solid var(--mainLightGray);
+}
+
+
+.accountBox .bottomSection {
+    position: relative;
+
+    height: auto;
+    width: 100%;
+
+    padding: 16px;
+
+    padding-top: 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.accountBox .bottomSection .learnButton {
+    height: auto;
+    width: auto;
+
+    cursor: pointer;
+
+    outline: none;
+
+    padding: 16px;
+    margin-bottom: 16px;
+
+    border: 2px solid var(--pink);
+    background: none;
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    transition: 0.1s ease-in;
+
+    min-width: fit-content;
+}
+
+.accountBox .bottomSection .learnButton:hover {
+    background: var(--pink);
+}
 
 
 
