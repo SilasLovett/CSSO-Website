@@ -737,29 +737,93 @@ header .middleSection .navElement {
     color: var(--mainOffWhite);
 }
 
-.accountBox {
+
+
+
+
+
+
+
+@property --accountAngle { /* forgive me for this */
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.accountBoxBorder { /*Because I can't have anything*/
     position: fixed;
     z-index: 999;
+
     height: auto;
     width: 450px;
 
     top: 112px;
     right: -482px;
 
-    background-color: var(--mainBlack);
-
-    border: 2px solid var(--mainOffWhite);
     border-radius: 10px;
 
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: conic-gradient(from var(--accountAngle), var(--buttonGreen), var(--buttonBlue), var(--buttonBlue), var(--buttonGreen), var(--buttonGreen));
+
+    padding: 3px;
+
+    animation: 5s accountSpin linear infinite;
+
+    transition: 0.1s ease-in;
+}
+
+.accountBoxBorder::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background: conic-gradient(from var(--accountAngle), var(--buttonGreen), var(--buttonBlue), var(--buttonBlue), var(--buttonGreen), var(--buttonGreen));
+
+    top: 50%;
+    left: 50%;
+
+    translate: -50% -50%;
+
+    z-index: -1;
+
+    border-radius: 10px;
+
+    animation: 5s accountSpin linear infinite;
+
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes accountSpin {
+    from {
+        --accountAngle: 0deg;
+    }
+    to {
+        --accountAngle: 360deg;
+    }
+}
+
+.accountBox {
+    position: relative;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+
+    background: var(--mainBlack);
+
+    border-radius: 10px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
-    transition: 0.1s ease-in;
 }
+
+
 
 .accountBox .topSection {
     position: relative;
@@ -1075,6 +1139,8 @@ header .middleSection .navElement {
 
     padding-top: 16px;
 
+    padding-right: 50%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1094,10 +1160,12 @@ header .middleSection .navElement {
     justify-content: space-between;
     align-items: center;
 
-    flex-grow: 0;
+    flex-grow: 1;
     flex-shrink: 0;
 
     margin-right: 16px;
+
+    transition: 0.2s ease-out;
 }
 
 .mobileNav .searchSection .searchBar input {
@@ -1123,8 +1191,13 @@ header .middleSection .navElement {
 
     transition: 0.05s ease-in;
 
+    transition: paddingLeft 0.2s ease-out;
+    transition: paddingRight 0.2s ease-out;
+
     padding-left: 16px;
     padding-right: 8px;
+
+
 }
 
 .mobileNav .searchSection .searchBar img {
@@ -1162,13 +1235,15 @@ header .middleSection .navElement {
     cursor: pointer;
 
     flex-shrink: 0;
-    flex-grow: 1;
+    flex-grow: 0;
 
     padding: 6px;
 
-    display: flex;
+    display: none;
     justify-content: flex-start;
     align-items: center;
+
+    transition: 0.2s ease-out;
 }
 
 .mobileNav .searchSection .mobileAccountBlock img {
@@ -2495,6 +2570,14 @@ footer .bottomSection .rightSection {
         display: flex;
         margin-right: 32px;
         height: 80%;
+    }
+
+    .mobileNav .searchSection .mobileAccountBlock {
+        display: flex;
+    }
+
+    .mobileNav .searchSection {
+        padding-right: 32px;
     }
 
     main .hero .leftSection {

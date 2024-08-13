@@ -141,6 +141,22 @@ function switchAccountBox() {
   }
 }
 
+let searchHoverSection = document.getElementById("searchHoverSection");
+
+mobileAccountBoxButton.addEventListener('mouseenter', () => {
+  mobileAccountBoxButton.style.flexGrow = 1;
+  searchHoverSection.style.flexGrow = 0;
+  mobileNavSearch.style.paddingLeft = "0px";
+  mobileNavSearch.style.paddingRight = "0px";
+});
+
+searchHoverSection.addEventListener('mouseenter', () => {
+  mobileAccountBoxButton.style.flexGrow = 0;
+  searchHoverSection.style.flexGrow = 1;
+  mobileNavSearch.style.paddingLeft = "16px";
+  mobileNavSearch.style.paddingRight = "8px";
+});
+
 let clickableMenuLinks = document.querySelectorAll(".clickableMenuLink");
 
 let clickableBackLinks;
