@@ -1,4 +1,64 @@
-gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+let consoleLoadingScreen = document.getElementById("consoleLoadingScreen");
+
+window.addEventListener('load', function() {
+  setTimeout(() => {
+    consoleLoadingScreen.style.opacity = "0";
+    setTimeout(() => {
+      consoleLoadingScreen.style.display = "none";
+    }, 500);
+  }, 1700);
+});
+
+sendRandomMessages();
+
+let loadingMessagesBox = document.getElementById("loadingMessagesBox");
+
+async function sendRandomMessages() {
+  let count = 0;
+  while(count < 20) {
+    count++;
+    await new Promise(resolve => setTimeout(resolve, 40));
+    loadingMessagesBox.innerHTML += `<h3 class="basicWhiteText">Initializing system... Please wait.</h3>`;
+  }
+}
+
+function sendLoadingMessage(message) {
+  loadingMessagesBox.innerHTML += `<h3 class="basicWhiteText">${message}</h3>`;
+}
+
+sendLoadingMessage("Welcome to the CSSO website! <3");
+
+setTimeout(() => {
+  sendLoadingMessage("We hope you enjoy your stay!");
+}, 100);
+
+setTimeout(() => {
+  sendLoadingMessage("Notifications should be loaded.");
+}, 300);
+
+setTimeout(() => {
+  sendLoadingMessage("I literally don't know what to put here I should set up firebase.");
+}, 500);
+
+setTimeout(() => {
+  sendLoadingMessage("Click events are totally functioning.");
+}, 800);
+
+setTimeout(() => {
+  sendLoadingMessage("Everything should hopefully be working!");
+}, 1000);
+
+
+
+
+
+gsap.registerPlugin(ScrollTrigger)
+
+sendLoadingMessage("GSAP should be registered and active! I hope.");
 
 /*gsap.from("#descriptionSection", {
     scrollTrigger: {
