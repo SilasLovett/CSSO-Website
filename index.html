@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.8.5/build/spline-viewer.js"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.15/build/spline-viewer.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 
 
     <script src="index.js" type="module"></script>
@@ -95,7 +95,7 @@
         <div class="accountBoxBorder" id="accountBox">
             <div class="accountBox" id="accountBox">
                 <div class="topSection">
-                    <img src="images/squareLogo.png">
+                    <img src="images/squareLogo.png" class="noSelect">
                     <div class="nameBox">
                         <h2 class="titleWhiteText">Lermonadeaaaaaaa</h2>
                         <h3 class="basicGrayText">Feeling Good!</h3>
@@ -187,6 +187,13 @@
         <div class="messagesBox" id="loadingMessagesBox">
 
         </div>
+
+        <div class="loadingWheelBoxGlow"></div>
+        <div class="loadingWheelBox">
+            <div class="windowHeader">
+
+            </div>
+        </div>
     </div>
 
     <main>
@@ -215,7 +222,7 @@
                 <button class="whiteButton">See Our Curriculum</button>
             </div>
             <div class="descriptionImage">
-                <img id="descriptionPicture" src="./images/temporaryVisual.png" class="noSelect">
+                <video autoplay muted loop src="images/randomVSCodeCompressed.mp4">
             </div>
         </div>
 

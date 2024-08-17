@@ -1647,7 +1647,7 @@ header .middleSection .navElement {
 }
 
 .consoleLoadingScreen .messagesBox h3 {
-    color: var(--logoGreen);
+    color: var(--buttonGreen);
 
     margin-bottom: 10px;
 
@@ -1655,6 +1655,60 @@ header .middleSection .navElement {
     font-family: "Inconsolata", monospace;
     font-optical-sizing: auto;
     font-style: normal;
+}
+
+.consoleLoadingScreen .loadingWheelBoxGlow {
+    position: absolute;
+    height: 300px;
+    width: 400px;
+
+    background: var(--buttonGreen);
+
+    translate: 2% -23%;
+
+    z-index: -1;
+
+    justify-self: center;
+    align-self: center;
+
+    border-radius: 10px;
+
+    filter: blur(2rem);
+    opacity: 0.6;
+}
+
+.consoleLoadingScreen .loadingWheelBox {
+    position: absolute;
+    height: 300px;
+    width: 400px;
+
+    border: 2px solid var(--buttonGreen);
+
+    background-color: var(--mainBlack);
+
+    z-index: 1;
+
+    translate: 0% -25%;
+
+    justify-self: center;
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.consoleLoadingScreen .loadingWheelBox .windowHeader {
+    height: 32px;
+
+    width: 100%;
+
+    background-color: var(--buttonGreen);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -1836,7 +1890,7 @@ main .descriptionSection .descriptionImage {
     align-items: center;
 }
 
-main .descriptionSection .descriptionImage img {
+main .descriptionSection .descriptionImage video {
     position: relative;
     height: 100%;
     width: auto;
@@ -1844,8 +1898,6 @@ main .descriptionSection .descriptionImage img {
     object-fit: cover;
 
     border-radius: 10px;
-
-    pointer-events: none;
 }
 
 
@@ -2514,7 +2566,7 @@ footer .bottomSection .rightSection {
         overflow: hidden;
     }
     
-    main .descriptionSection .descriptionImage img {
+    main .descriptionSection .descriptionImage video {
         position: relative;
         height: 100%;
         width: 100%;
@@ -2553,7 +2605,7 @@ footer .bottomSection .rightSection {
         overflow: hidden;
     }
     
-    main .descriptionSection .descriptionImage img {
+    main .descriptionSection .descriptionImage video {
         position: relative;
         height: 100%;
         width: 100%;
@@ -2941,7 +2993,7 @@ footer .bottomSection .rightSection {
         padding: 48px;
     }
 
-    .accountBox {
+    .accountBoxBorder {
         top: 192px;
     }
 }
@@ -2984,7 +3036,7 @@ footer .bottomSection .rightSection {
         pointer-events: none;
     }
 
-    .accountBox {
+    .accountBoxBorder {
         width: calc(100% - 64px);
     }
 }

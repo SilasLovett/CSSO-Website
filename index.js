@@ -77,6 +77,7 @@ gsap.from("#statsBox1", {
     start: "top bottom", // top hits the bottom of the screen
     end: "top center+=200",
     scrub: 0.25,
+    lazy: false,
   },
   autoAlpha: 0,
   x: '-100%',
@@ -88,6 +89,7 @@ gsap.from("#statsBox2", {
     start: "top bottom", // top hits the bottom of the screen
     end: "top center+=200",
     scrub: 0.25,
+    lazy: false,
   },
   autoAlpha: 0,
   x: '-100%',
@@ -99,6 +101,7 @@ gsap.from("#statsBox3", {
     start: "top bottom", // top hits the bottom of the screen
     end: "top center+=200",
     scrub: 0.25,
+    lazy: false,
   },
   autoAlpha: 0,
   x: '-100%',
@@ -110,10 +113,13 @@ gsap.from("#statsBox4", {
     start: "top bottom", // top hits the bottom of the screen
     end: "top center+=200",
     scrub: 0.25,
+    lazy: false,
   },
   autoAlpha: 0,
   x: '-100%',
 });
+
+ScrollTrigger.refresh();
 
 
 let navElements = document.querySelectorAll(".navElement");
