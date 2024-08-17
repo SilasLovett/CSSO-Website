@@ -4,14 +4,14 @@
 
 let consoleLoadingScreen = document.getElementById("consoleLoadingScreen");
 
-window.addEventListener('load', function() {
+/*window.addEventListener('load', function() {
   setTimeout(() => {
     consoleLoadingScreen.style.opacity = "0";
     setTimeout(() => {
       consoleLoadingScreen.style.display = "none";
     }, 500);
   }, 1700);
-});
+});*/
 
 sendRandomMessages();
 
@@ -200,7 +200,7 @@ mobileAccountBoxButton.addEventListener('click', () => {
 function switchAccountBox() {
   if(accountBox.classList.contains("accountBoxOpen")) {
     accountBox.classList.remove("accountBoxOpen");
-    accountBox.style.right = "-482px";
+    accountBox.style.right = "-600px";
   } else {
     accountBox.classList.add("accountBoxOpen");
     accountBox.style.right = "32px";

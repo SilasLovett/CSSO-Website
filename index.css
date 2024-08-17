@@ -755,10 +755,10 @@ header .middleSection .navElement {
     z-index: 999;
 
     height: auto;
-    width: 450px;
+    width: auto;
 
     top: 112px;
-    right: -482px;
+    right: -600px;
 
     border-radius: 10px;
 
@@ -772,7 +772,7 @@ header .middleSection .navElement {
 
     animation: 5s accountSpin linear infinite;
 
-    transition: 0.1s ease-in;
+    transition: 0.15s ease-in;
 }
 
 .accountBoxBorder::before {
@@ -811,7 +811,7 @@ header .middleSection .navElement {
     position: relative;
     z-index: 999;
     height: 100%;
-    width: 100%;
+    width: auto;
 
     background: var(--mainBlack);
 
@@ -820,7 +820,9 @@ header .middleSection .navElement {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+
+    padding: 32px;
 }
 
 
@@ -829,12 +831,13 @@ header .middleSection .navElement {
     position: relative;
 
     height: auto;
-    width: 100%;
+    width: auto;
 
-    padding: 16px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+
+    margin-bottom: 32px;
 }
 
 .accountBox .topSection img {
@@ -862,30 +865,33 @@ header .middleSection .navElement {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+
+    overflow: hidden;
+    padding-right: 16px;
 }
 
 .accountBox .topSection .nameBox h2 {
     margin-bottom: 0.2em;
+    word-break: break-all;
 }
 
 .accountBox .centerSection {
     position: relative;
 
     height: auto;
-    width: 100%;
-
-    padding: 16px;
-    padding-top: 0px;
+    width: auto;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+
+    margin-bottom: 32px;
 }
 
 .accountBox .centerSection .bioBox {
     height: auto;
-    width: 100%;
+    width: 416px;
 
     display: flex;
     flex-direction: column;
@@ -895,9 +901,13 @@ header .middleSection .navElement {
     margin-bottom: 16px;
 }
 
+.accountBox .centerSection .bioBox h3 {
+    line-height: 1.3em;
+}
+
 .accountBox .centerSection .infoBox {
     height: auto;
-    width: 100%;
+    width: 416px;
 
     background-color: var(--mainOffWhite);
     border-radius: 10px;
@@ -920,15 +930,11 @@ header .middleSection .navElement {
     margin-bottom: 0em;
 }
 
-.accountBox .bottomSection {
+.accountBox .buttonBox {
     position: relative;
 
     height: auto;
-    width: 100%;
-
-    padding: 16px;
-
-    padding-top: 0px;
+    width: auto;
 
     display: flex;
     flex-direction: row;
@@ -936,32 +942,19 @@ header .middleSection .navElement {
     align-items: flex-start;
 }
 
-.accountBox .bottomSection .buttonBox {
-    position: relative;
-
-    height: auto;
-    width: 55%;
-
-    margin-right: 16px;
-
-    padding-top: 0px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+.accountBox .buttonBox button {
+    width: 200px;
 }
 
-.accountBox .bottomSection .buttonBox .learnButton {
+.accountBox .buttonBox .learnButton {
     height: auto;
-    width: 100%;
 
     cursor: pointer;
 
     outline: none;
 
     padding: 16px;
-    margin-bottom: 16px;
+    margin-right: 16px;
 
     border: 2px solid var(--pink);
     background: none;
@@ -985,23 +978,8 @@ header .middleSection .navElement {
     min-width: fit-content;
 }
 
-.accountBox .bottomSection .buttonBox .learnButton:hover {
+.accountBox .buttonBox .learnButton:hover {
     background: var(--pink);
-}
-
-.accountBox .bottomSection .goBack {
-    position: relative;
-
-    height: 130px;
-    width: calc(45% - 16px);
-
-    background: var(--mainOffWhite);
-    border-radius: 10px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
 }
 
 
@@ -1632,7 +1610,7 @@ header .middleSection .navElement {
     justify-content: center;
     align-items: center;
 
-    transition: 0.5s ease-in;
+    transition: opacity 0.5s ease-in;
 }
 
 .consoleLoadingScreen .messagesBox {
@@ -1664,7 +1642,7 @@ header .middleSection .navElement {
 
     background: var(--buttonGreen);
 
-    translate: 2% -23%;
+    translate: 3% -22%;
 
     z-index: -1;
 
@@ -1704,10 +1682,36 @@ header .middleSection .navElement {
 
     width: 100%;
 
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+
     background-color: var(--buttonGreen);
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.consoleLoadingScreen .loadingWheelBox .windowHeader h4 {
+    font-size: var(--size4);
+    font-weight: 500;
+    color: var(--mainBlack);
+}
+
+.consoleLoadingScreen .loadingWheelBox .windowHeader img {
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+.consoleLoadingScreen .loadingWheelBox .main {
+    height: calc(100% - 32px);
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -3038,6 +3042,39 @@ footer .bottomSection .rightSection {
 
     .accountBoxBorder {
         width: calc(100% - 64px);
+    }
+
+    .accountBoxBorder .accountBox {
+        width: 100%;
+    }
+
+    .accountBoxBorder .buttonBox {
+        width: 100%;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .accountBoxBorder .accountBox .centerSection {
+        width: 100%;
+    }
+
+    .accountBoxBorder .accountBox .centerSection .infoBox {
+        width: 100%;
+    }
+
+    .accountBoxBorder .accountBox .centerSection .bioBox {
+        width: 100%;
+    }
+
+    .accountBox .buttonBox button {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .accountBox .buttonBox .learnButton {
+        margin-bottom: 16px;
     }
 }
 
