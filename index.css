@@ -998,36 +998,66 @@ header .middleSection .navElement {
     top: 80px;
     margin-left: -32px;
 
-    border-bottom: 2px solid var(--mainOffWhite);
-
     background-color: var(--mainBlack);
 
-    padding: 32px;
+    padding: none;
+
     display: none;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.navMenu .navColumn {
-    position: relative;
-    width: 200px;
-    height: auto;
-
-    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
 
-    margin-right: 32px;
+    border-bottom: 2px solid var(--mainOffWhite);
+
+    cursor: pointer;
+
+    padding-bottom: 8px;
 }
 
-.navMenu .navColumn h2 {
-    margin-bottom: 0.5em;
+.navMenu .navBlock {
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    transition: 0.1s ease-in;
+
+    cursor: pointer;
 }
 
-.navMenu .navColumn:last-of-type {
-    margin-right: 0px;
+
+.navMenu .navBlock h3 {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--size5);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    transition: 0.1s ease-in;
+}
+
+.navMenu .navBlock:hover {
+    background-color: var(--mainDarkGray);
+}
+
+.navMenu .navBlock:hover h3 {
+    color: var(--pink);
+}
+
+.navMenu:last-child {
+    margin-bottom: 0px;
 }
 
 
@@ -1859,11 +1889,30 @@ main .hero .rightSection h1 {
 
     vertical-align: middle;
 
-    margin-bottom: 0.4em;
+    margin-bottom: 0.3em;
 
     letter-spacing: 0.01em;
 
     margin-left: 6px;
+}
+
+main .hero .rightSection .gradientText {
+
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    letter-spacing: 0.01em;
+
+    background: linear-gradient(to right, var(--buttonBlue), var(--buttonGreen));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 main .hero .rightSection p {
@@ -1873,7 +1922,7 @@ main .hero .rightSection p {
 
     line-height: 1.5em;
 
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 
 main .hero .rightSection .buttons {
