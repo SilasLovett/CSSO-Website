@@ -4,14 +4,14 @@
 
 let consoleLoadingScreen = document.getElementById("consoleLoadingScreen");
 
-/*window.addEventListener('load', function() {
+window.addEventListener('load', function() {
   setTimeout(() => {
     consoleLoadingScreen.style.opacity = "0";
     setTimeout(() => {
       consoleLoadingScreen.style.display = "none";
     }, 500);
   }, 1700);
-});*/
+});
 
 sendRandomMessages();
 
