@@ -1026,7 +1026,7 @@ header .middleSection .navElement {
     padding-top: 16px;
     padding-bottom: 16px;
 
-    transition: 0.1s ease-in;
+    transition: 0.05s ease-in;
 
     cursor: pointer;
 }
@@ -1045,7 +1045,7 @@ header .middleSection .navElement {
 
     vertical-align: middle;
 
-    transition: 0.1s ease-in;
+    transition: 0.05s ease-in;
 }
 
 .navMenu .navBlock:hover {
@@ -2516,10 +2516,28 @@ footer .topSection .footerColumn h3:hover {
     color: var(--mainOffWhite);
 }
 
-footer .topSection .footerColumn2 h2 {
-    margin-right: 32px;
 
-    padding-bottom: 0.7em;
+footer .topSection .footerColumn .systemsCheck {
+    height: 48px;
+    width: auto;
+
+    background-color: var(--mainDarkGray);
+
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-radius: 10px;
+}
+
+footer .topSection .footerColumn .systemsCheck h2 {
+    margin-bottom: 0px;
+    padding-bottom: 0em;
+    margin-right: 0px;
 }
 
 
@@ -2549,6 +2567,7 @@ footer .bottomSection .leftSection {
 }
 
 footer .bottomSection .rightSection {
+    position: relative;
     height: 100%;
     width: 50%;
 
@@ -2556,6 +2575,32 @@ footer .bottomSection .rightSection {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+
+    padding-right: 48px;
+}
+
+footer .bottomSection .rightSection img {
+    height: 45px;
+    aspect-ratio: 1;
+
+    margin-right: 16px;
+
+    object-fit: contain;
+    cursor: pointer;
+
+    border-radius: 10px;
+}
+
+footer .bottomSection .rightSection .lightBG {
+    background-color: var(--mainOffWhite);
+
+    padding: 4px;
+}
+
+footer .bottomSection .rightSection .darkBG {
+    background-color: var(--mainDarkGray);
+
+    padding: 4px;
 }
 
 
@@ -3182,6 +3227,20 @@ footer .bottomSection .rightSection {
     .accountBox .buttonBox .learnButton {
         margin-bottom: 16px;
     }
+
+    .consoleLoadingScreen .loadingWheelBoxGlow {
+        position: absolute;
+        width: 90%;
+        translate: 0 -22%;
+    }
+    
+    .consoleLoadingScreen .loadingWheelBox {
+        position: absolute;
+        width: 90%;
+        translate: 0 -22%;
+    }
+    
+    
 }
 
 @media only screen and (orientation: portrait) {
