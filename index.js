@@ -239,21 +239,39 @@ linksMap.set('Get Started', [
 ]);
 
 linksMap.set('Curriculums', [
-  {title: "Curriculum List"},
-  {title: "Intro to Programming"},
-  {title: "Development Courses"},
-  {title: "Competitive Courses"},
+  {title: "Curriculum Information"},
+  {title: "Getting Started"},
+  {title: "How to use our curriculums"},
+  {title: "Courses"},
   {title: "Learning Paths"},
-  {title: "How to Use"},
-  {title: "Suggestions"},
 ]);
 
 linksMap.set('Club Resources', [
-  {title: "Websites"},
-  {title: "Slideshows"},
-  {title: "Meeting Resources"},
-  {title: "Merch Information"},
-  {title: "Contact Us"},
+  {title: "Club Information"},
+  {title: "Club Benefits"},
+  {title: "Find Clubs Near You!"},
+  {title: "Register Your Club :D"},
+  {title: "Club Legal Information"},
+]);
+
+linksMap.set('Projects', [
+  {title: "About Projects"},
+  {title: "Make a Suggestion"},
+]);
+
+linksMap.set('Information', [
+  {title: "Nonprofit Information"},
+  {title: "Our Partners"},
+  {title: "Privacy Policy"},
+  {title: "Terms and Conditions"},
+  {title: "Disclaimers"},
+  {title: "Cookie Policy"},
+  {title: "Accessibility Statement"},
+]);
+
+linksMap.set('About Us', [
+  {title: "Our Team"},
+  {title: "Our Goals 🚀"},
 ]);
 
 linksMap.set('Default', [
@@ -284,6 +302,15 @@ clickableMenuLinks.forEach(link => {
         break;
       case "Club Resources":
         color = "color3";
+        break;
+      case "Projects":
+        color = "color4";
+        break;
+      case "Information":
+        color = "color5";
+        break;
+      case "About Us":
+        color = "color6";
         break;
       default:
         color = "color1";

@@ -1417,6 +1417,18 @@ header .middleSection .navElement {
     background: linear-gradient(135deg, #03001e, #7303c0, #ec38bc, #fdeff9);
 }
 
+.mobileNav .navigationSection .color4 {
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+}
+
+.mobileNav .navigationSection .color5 {
+    background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+}
+
+.mobileNav .navigationSection .color6 {
+    background: linear-gradient(135deg, #4568DC, #B06AB3);
+}
+
 .mobileNav .navigationSection .color1 h2,
 .mobileNav .navigationSection .color2 h2 {
     font-weight: 500;
