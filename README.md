@@ -49,7 +49,7 @@ I hope the website is alright! It's not perfect, but I'm pretty proud of it so f
       <li>Going forward, I can put my finishing touches on the home page, create a 404 page, develop the site further, and then revisit the home page to add more sections!</li>
       <li>I hope you enjoy the site! It is currently hosted on lerstudios.com/CSSO! Case sensitive! And remember this isn't done yet!</li>
       <li>Thank you so much! :D</li>
-      <li>  Major Changes<br><br>
+      <li>  Major Changes:<br>
         <details>
         <ul>
           <li>Mobile nav</li> 
