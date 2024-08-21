@@ -1014,6 +1014,14 @@ header .middleSection .navElement {
     padding-bottom: 8px;
 }
 
+.navMenu a {
+    display: block;
+    height: auto;
+    width: 100%;
+
+    text-decoration: none;
+}
+
 .navMenu .navBlock {
     height: auto;
     width: 100%;
@@ -1046,6 +1054,8 @@ header .middleSection .navElement {
     vertical-align: middle;
 
     transition: 0.05s ease-in;
+
+    text-decoration: none;
 }
 
 .navMenu .navBlock:hover {
@@ -3167,7 +3177,7 @@ footer .bottomSection .rightSection .darkBG {
 
 @media (max-width: 500px) {
     main .descriptionSection {
-        margin-top: 0px;
+        margin-top: 16px;
     }
 
     main {
