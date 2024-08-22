@@ -494,7 +494,7 @@ This is to remove the password reveal button I think.
     width: 100%;
     z-index: 999;
 
-    background-color: var(--mainOffWhite);
+    background: linear-gradient(45deg, var(--buttonBlue), var(--buttonGreen));
 
     display: flex;
     justify-content: space-between;
@@ -1322,6 +1322,12 @@ header .middleSection .navElement {
     transition: 0.2s ease-out;
 
     overflow-y: scroll;
+}
+
+.mobileNav .navigationSection .extraLinks a {
+    width: 100%;
+    height: auto;
+    text-decoration: none;
 }
 
 .mobileNav .navigationSection .mobileLink {

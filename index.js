@@ -122,27 +122,34 @@ gsap.from("#statsBox4", {
 ScrollTrigger.refresh();
 
 
-let navElements = document.querySelectorAll(".navElement");
 
-navElements.forEach(link => {
-  link.addEventListener('mouseenter', () => {
 
-    let navMenu = link.querySelector(".navMenu");
-    if(navMenu != null) {
-      navMenu.style.display = "flex";
-    }
 
+
+
+function updateNavElements() {
+  let navElements = document.querySelectorAll(".navElement");
+
+  navElements.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+  
+      let navMenu = link.querySelector(".navMenu");
+      if(navMenu != null) {
+        navMenu.style.display = "flex";
+      }
+  
+    });
+    link.addEventListener('mouseleave', () => {
+  
+      // Your event handler code here
+      let navMenu = link.querySelector(".navMenu");
+      if(navMenu != null) {
+        navMenu.style.display = "none";
+      }
+  
+    });
   });
-  link.addEventListener('mouseleave', () => {
-
-    // Your event handler code here
-    let navMenu = link.querySelector(".navMenu");
-    if(navMenu != null) {
-      navMenu.style.display = "none";
-    }
-
-  });
-})
+}
 
 let mobileNavButton = document.getElementById("mobileNavButton");
 let mobileNav = document.getElementById("mobileNav");
@@ -335,9 +342,11 @@ clickableMenuLinks.forEach(link => {
 
     links.forEach(link => {
       extraLinks.innerHTML += `
-<div class="mobileLink borderBottom">
-    <h2 class="titleWhiteText">${link.title}</h2>
-</div>
+<a href="${link.link}" target="_blank">
+  <div class="mobileLink borderBottom">
+      <h2 class="titleWhiteText">${link.title}</h2>
+  </div>
+</a>
       `
     });
 
@@ -356,6 +365,45 @@ clickableMenuLinks.forEach(link => {
 
   });
 });
+
+let headerMiddleSection = document.getElementById("headerMiddleSection");
+
+function generateHeaderLinks() {
+  let html = ``;
+
+  linksMap.forEach((value, key) => {
+    let sectionName = key;
+
+    if(sectionName === "Default" || sectionName === "Get Started") {
+      return;
+    }
+
+    html += `
+<div class="navElement">
+  <h3 class="pinkLink noSelect">${sectionName}</h3>
+  <div class="navMenu">`;
+
+      value.forEach((obj) => {
+        html += `
+      <a href="${obj.link}" target="_blank">
+        <div class="navBlock">
+            <h3 class="basicWhiteText">${obj.title}</h3>
+        </div>
+      </a>`;
+      });
+
+    html += `
+  </div>
+</div>`;
+
+  });
+
+  headerMiddleSection.innerHTML = html;
+
+  updateNavElements();
+}
+
+generateHeaderLinks();
 
 let mobileNavSearch = document.getElementById("mobileNavSearch");
 
