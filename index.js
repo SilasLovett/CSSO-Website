@@ -233,50 +233,50 @@ let mainLinks = document.getElementById("mainLinks");
 let linksMap = new Map();
 
 linksMap.set('Get Started', [
-  {title: "Learn More"},
-  {title: "Log in"},
-  {title: "Sign Up"},
+  {title: "Learn More", link:"/CSSO/learn-more"},
+  {title: "Log in", link:"/CSSO/login"},
+  {title: "Sign Up", link:"/CSSO/sign-up"},
 ]);
 
 linksMap.set('Curriculums', [
-  {title: "Curriculum Information"},
-  {title: "Getting Started"},
-  {title: "How to use our curriculums"},
-  {title: "Courses"},
-  {title: "Learning Paths"},
+  {title: "Curriculum Information", link:"/CSSO/curriculums"},
+  {title: "Getting Started", link:"/CSSO/curriculums/getting-started"},
+  {title: "How to use our curriculums", link:"/CSSO/curriculums/how-to"},
+  {title: "Courses", link:"/CSSO/curriculums/courses"},
+  {title: "Learning Paths", link:"/CSSO/curriculums/learning-paths"},
 ]);
 
 linksMap.set('Club Resources', [
-  {title: "Club Information"},
-  {title: "Club Benefits"},
-  {title: "Find Clubs Near You!"},
-  {title: "Register Your Club :D"},
-  {title: "Club Legal Information"},
+  {title: "Club Information", link:"/CSSO/clubs"},
+  {title: "Club Benefits", link:"/CSSO/clubs/benefits"},
+  {title: "Find Clubs Near You!", link:"/CSSO/clubs/map"},
+  {title: "Register Your Club :D", link:"/CSSO/clubs/register"},
+  {title: "Club Legal Information", link:"/CSSO/clubs/legal"},
 ]);
 
 linksMap.set('Projects', [
-  {title: "About Projects"},
-  {title: "Make a Suggestion"},
+  {title: "About Projects", link:"/CSSO/projects"},
+  {title: "Make a Suggestion", link:"/CSSO/projects/suggestions"},
 ]);
 
 linksMap.set('Information', [
-  {title: "Nonprofit Information"},
-  {title: "Our Partners"},
-  {title: "Privacy Policy"},
-  {title: "Terms and Conditions"},
-  {title: "Disclaimers"},
-  {title: "Cookie Policy"},
-  {title: "Accessibility Statement"},
+  {title: "Nonprofit Information", link:"/CSSO/info/nonprofit"},
+  {title: "Our Partners", link:"/CSSO/info/partners"},
+  {title: "Privacy Policy", link:"/CSSO/info/privacy-policy"},
+  {title: "Terms and Conditions", link:"/CSSO/info/terms-and-conditions"},
+  {title: "Disclaimers", link:"/CSSO/info/disclaimers"},
+  {title: "Cookie Policy", link:"/CSSO/info/cookie-policy"},
+  {title: "Accessibility Statement", link:"/CSSO/info/accessibility-statement"},
 ]);
 
 linksMap.set('About Us', [
-  {title: "Our Team"},
-  {title: "Our Goals 🚀"},
+  {title: "Our Team", link:"/CSSO/about-us/team"},
+  {title: "Our Goals 🚀", link:"/CSSO/about-us/goals"},
 ]);
 
 linksMap.set('Default', [
-  {title: "Unknown Link"},
-  {title: "404"},
+  {title: "Unknown Link", link:"/CSSO/404"},
+  {title: "404", link:"/CSSO/404"},
 ]);
 
 let extraLinksActive = false;
