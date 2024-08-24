@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    /*sharpening*/
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: normal;
+}
+
+:root {
+    --mainBlack: #000807;
+    --mainDarkBlue: #00001E;
+
+    --mainOffWhite: #FBF5F3;
+
+    --mainLightGray: #c9c4c3;
+    --mainDarkGray: #252323;
+
+    --logoGreen: #15c55d;
+    --logoBlue: #0485b9;
+
+    --buttonGreen: #1ed94f;
+    --buttonBlue: #33c9ff;
+
+    --pink: #F433AB;
+    --pinkPurple: #CB04A5;
+    --darkGreen: #036E37;
+    --randomBlue: #07BFD1;
+
+    --red: #ce2323;
+
+    --sizeBasic: 1em;
+    --size0: 0.1082em;
+    --size1: 0.1751em;
+    --size2: 0.2833em;
+    --size3: 0.4584em;
+    --size4: 0.7417em;
+    --size5: 1.2000em;
+    --size6: 1.9416em;
+    --size7: 3.1415em;
+    --size8: 5.0830em;
+    --size9: 8.2243em;
+    --size10: 13.3072em;
+}
+
+/*
+This is to remove the password reveal button I think.
+::-ms-reveal {
+    filter: invert(100%);
+}
+*/
+
+.noSelect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+
+
+
+
+
+main {
+    position: relative;
+    background: var(--mainBlack);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+main .hero {
+    position: relative;
+
+    width: 100%;
+
+    height: 80vh;
+    height: 80svh;
+
+    background: var(--mainBlack);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-bottom: 2px solid #000000;
+}
+
+main .hero .splineSection {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+main .hero .leftSection {
+    position: relative;
+
+    height: 100%;
+    width: 40%;
+
+    pointer-events: none;
+}
+
+main .hero .rightSection {
+    position: relative;
+
+    height: 100%;
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 64px;
+
+    pointer-events: none;
+}
+
+main .hero .rightSection h1 {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: var(--size8);
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    vertical-align: middle;
+
+    margin-bottom: 0.3em;
+
+    letter-spacing: 0.01em;
+
+    margin-left: 6px;
+}
+
+main .hero .rightSection .gradientText {
+
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--mainOffWhite);
+
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    letter-spacing: 0.01em;
+
+    background: linear-gradient(to right, var(--buttonBlue), var(--buttonGreen));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main .hero .rightSection p {
+    width: 75%;
+
+    padding-left: 8px;
+
+    line-height: 1.5em;
+
+    margin-bottom: 2em;
+}
+
+main .hero .rightSection .buttons {
+    position: relative;
+    height: auto;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main .hero .rightSection .buttons button {
+    pointer-events: all;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1532px) {
+    main .hero .leftSection {
+        height: 100%;
+        width: 30%;
+    }
+    
+    main .hero .rightSection {
+        height: 100%;
+        width: 70%;
+    }
+}
+
+
+@media (max-width: 1232px) {
+    main .hero .leftSection {
+        height: 100%;
+        width: 20%;
+    }
+    
+    main .hero .rightSection {
+        height: 100%;
+        width: 80%;
+    }
+}
+
+@media (max-width: 1032px) {
+    main .hero {
+        height: 90vh;
+        height: 90svh;
+    }
+}
+
+@media (max-width: 932px) {
+    main .hero .leftSection {
+        height: 100%;
+        width: 0%;
+    }
+    
+    main .hero .rightSection {
+        height: 100%;
+        width: 100%;
+
+        justify-content: flex-end;
+
+        padding: 48px;
+    }
+}
+
+@media (max-height: 850px) {
+    main .hero .leftSection {
+        position: relative;
+    
+        height: 100%;
+        width: 10%;
+    
+        pointer-events: none;
+    }
+    
+    main .hero .rightSection {
+        position: relative;
+    
+        height: 100%;
+        width: 90%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    
+        padding: 64px;
+    
+        pointer-events: none;
+
+    }
+
+    main .hero {
+        position: relative;
+    
+        width: 100%;
+    
+        height: 85vh;
+        height: 85svh;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    
+        border-bottom: 2px solid #000000;
+    }
+}
+
+@media (max-width: 932px) {
+    main .hero .leftSection {
+        height: 100%;
+        width: 0%;
+    }
+    
+    main .hero .rightSection {
+        height: 100%;
+        width: 100%;
+
+        justify-content: flex-end;
+
+        padding: 48px;
+    }
+}
+
+@media (max-width: 500px) {
+    main .hero {
+        height: 90vh;
+        height: 90svh;
+    }
+
+    main .hero .rightSection p {
+        width: 100%;
+    }
+
+    main .hero .rightSection {
+        position: relative;
+    
+        height: 100%;
+        width: 90%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    
+        padding: 64px;
+
+        padding-left: 32px;
+
+        padding-bottom: 16px;
+    
+        pointer-events: none;
+    }
+}
