@@ -15,12 +15,9 @@
 
 :root {
     --mainBlack: #000807;
-    --mainDarkBlue: #00001E;
-
     --mainOffWhite: #FBF5F3;
 
     --mainLightGray: #c9c4c3;
-    --mainDarkGray: #252323;
 
     --logoGreen: #15c55d;
     --logoBlue: #0485b9;
@@ -29,13 +26,7 @@
     --buttonBlue: #33c9ff;
 
     --pink: #F433AB;
-    --pinkPurple: #CB04A5;
-    --darkGreen: #036E37;
-    --randomBlue: #07BFD1;
 
-    --red: #ce2323;
-
-    --sizeBasic: 1em;
     --size0: 0.1082em;
     --size1: 0.1751em;
     --size2: 0.2833em;
