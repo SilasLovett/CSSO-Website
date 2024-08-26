@@ -77,6 +77,8 @@ main {
     align-items: center;
 
     overflow: hidden;
+
+    padding-top: 80px;
 }
 
 main .hero {
