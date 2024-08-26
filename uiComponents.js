@@ -315,14 +315,14 @@ function generateHeaderLinks() {
   <h3 class="pinkLink noSelect">${sectionName}</h3>
   <div class="navMenu">`;
 
-      value.forEach((obj) => {
-        html += `
-      <a href="${obj.link}" target="_blank">
-        <div class="navBlock">
-            <h3 class="basicWhiteText">${obj.title}</h3>
-        </div>
-      </a>`;
-      });
+    value.forEach((obj) => {
+      html += `
+    <a href="${obj.link}" target="_blank">
+      <div class="navBlock">
+          <h3 class="basicWhiteText">${obj.title}</h3>
+      </div>
+    </a>`;
+    });
 
     html += `
   </div>
@@ -336,6 +336,40 @@ function generateHeaderLinks() {
 }
 
 generateHeaderLinks();
+
+let footerLinks = document.getElementById("footerLinks");
+
+function generateFooterLinks() {
+
+  let html = ``;
+
+  linksMap.forEach((value, key) => {
+    let sectionName = key;
+
+    if(sectionName === "Default" || sectionName === "Get Started") {
+      return;
+    }
+
+    html += `<div class="footerColumn">`;
+    html += ` <h2 class="basicWhiteText">${sectionName}</h2>`;
+
+    value.forEach((obj) => {
+      html += `
+    <a href="${obj.link}" target="_blank">
+      <h3 class="basicGrayText">${obj.title}</h3>
+    </a>`;
+    });
+
+    html += `</div>`;
+
+
+  });
+
+
+  footerLinks.innerHTML = html;
+}
+
+generateFooterLinks();
 
 let mobileNavSearch = document.getElementById("mobileNavSearch");
 
