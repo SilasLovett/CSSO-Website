@@ -94,7 +94,8 @@ main .hero {
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 64px;
     align-items: center;
 }
 
@@ -113,7 +114,7 @@ main .hero .splineSection {
 main .hero h1 {
     text-decoration: none;
     font-weight: 400;
-    font-size: var(--size8);
+    font-size: var(--size9);
     color: var(--mainOffWhite);
 
     font-family: Inconsolata;
@@ -159,9 +160,9 @@ main .bodyText {
     background: var(--mainBlack);
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 
     padding: 32px;
 }
@@ -170,8 +171,9 @@ main .bodyText .textBox {
     position: relative;
 
     margin-top: 48px;
+    margin-left: 48px;
 
-    width: 33.3%;
+    width: 40%;
 
     height: auto;
 
