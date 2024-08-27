@@ -234,6 +234,26 @@ main .hero .rightSection .buttons button {
         height: 90vh;
         height: 90svh;
     }
+    
+    :root {
+        --size4: 0.6417em;
+        --size5: 1.000em;
+        --size6: 1.7416em;
+        --size7: 2.7415em;
+        --size8: 3em;
+        --size9: 3em;
+    }
+}
+
+@media (max-height: 590px) {
+    :root {
+        --size4: 0.6417em;
+        --size5: 1.000em;
+        --size6: 1.7416em;
+        --size7: 3.5em;
+        --size8: 3.5em;
+        --size9: 7em;
+    }
 }
 
 @media (max-width: 932px) {

@@ -170,8 +170,8 @@ main .bodyText {
 main .bodyText .textBox {
     position: relative;
 
-    margin-top: 48px;
-    margin-left: 48px;
+    margin: 48px;
+    margin-bottom: 0px;
 
     width: 40%;
 
@@ -231,8 +231,28 @@ main .bodyText .textBox h3 {
 
 @media (max-width: 1032px) {
     main .hero {
-        height: 90vh;
-        height: 90svh;
+        height: 50vh;
+        height: 50svh;
+    }
+    
+    :root {
+        --size4: 0.6417em;
+        --size5: 1.000em;
+        --size6: 1.7416em;
+        --size7: 2.7415em;
+        --size8: 3em;
+        --size9: 3em;
+    }
+}
+
+@media (max-height: 590px) {
+    :root {
+        --size4: 0.6417em;
+        --size5: 1.000em;
+        --size6: 1.7416em;
+        --size7: 3.5em;
+        --size8: 3.5em;
+        --size9: 7em;
     }
 }
 
@@ -248,7 +268,15 @@ main .bodyText .textBox h3 {
 
         justify-content: flex-end;
 
-        padding: 48px;
+        padding: 32px;
+    }
+
+    main .bodyText {
+        padding: 0px;
+    }
+
+    main .hero {
+        padding: 32px;
     }
 }
 
@@ -273,7 +301,7 @@ main .bodyText .textBox h3 {
         justify-content: flex-end;
         align-items: flex-start;
     
-        padding: 64px;
+        padding: 0px;
     
         pointer-events: none;
 
@@ -284,8 +312,8 @@ main .bodyText .textBox h3 {
     
         width: 100%;
     
-        height: 85vh;
-        height: 85svh;
+        height: 50vh;
+        height: 50svh;
     
         display: flex;
         flex-direction: row;
@@ -305,40 +333,9 @@ main .bodyText .textBox h3 {
     main .hero .rightSection {
         height: 100%;
         width: 100%;
-
-        justify-content: flex-end;
-
-        padding: 48px;
-    }
-}
-
-@media (max-width: 500px) {
-    main .hero {
-        height: 90vh;
-        height: 90svh;
     }
 
-    main .hero .rightSection p {
+    main .bodyText .textBox {
         width: 100%;
-    }
-
-    main .hero .rightSection {
-        position: relative;
-    
-        height: 100%;
-        width: 90%;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
-    
-        padding: 64px;
-
-        padding-left: 32px;
-
-        padding-bottom: 16px;
-    
-        pointer-events: none;
     }
 }

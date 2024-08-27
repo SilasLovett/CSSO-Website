@@ -265,7 +265,7 @@ clickableMenuLinks.forEach(link => {
     extraLinks.innerHTML = `
 <div class="mobileLink clickableBackLink borderTop">
     <h2 class="titleWhiteText"> Go Back</h2>
-    <img src="images/icons/backarrow.png" class="clickableImage backwardsClickableImage">
+    <img src="/CSSOImages/icons/backarrow.png" class="clickableImage backwardsClickableImage">
 </div>
 
 <div class="mobileLink ${color}">
