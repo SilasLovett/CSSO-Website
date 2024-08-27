@@ -4,11 +4,16 @@ This is a website for a non-profit that we are planning to register with Hackclu
 It was made by me, Silas Lovett, but the non-profit involves multiple other people.
 I hope the website is alright! It's not perfect, but I'm pretty proud of it so far! :D
 
+Visit at lerstudios.com/CSSO! The domain is temporary, the website isn't done, and the host website DEFINITELY isn't done! :D
+
 
 ## Current Pages
 
 <ul>
   <li><b>Homepage:</b> Homepage of the website, not finished yet!</li>
+  <li><b>404:</b> 404 error page, not finished yet!</li>
+  <li><b>Terms and Conditions:</b> Terms and Conditions page, not finished yet!</li>
+  <li><b>Privacy Policy:</b> Privacy Policy page, not finished yet!</li>
 </ul>
 
 ## Sources
