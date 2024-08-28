@@ -282,7 +282,46 @@ main .statsSection {
 
     overflow: hidden;
 
-    margin-top: 256px;
+    margin-top: 64px;
+    padding-top: 192px;
+
+    padding-bottom: 192px;
+}
+
+main .statsSection .statsBackground {
+    position: absolute;
+    top: 0;
+    bottom: 18px;
+    left: -5%;
+    width: 110%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 32px;
+
+    overflow: hidden;
+    word-break: break-all;
+
+    z-index: 0;
+
+    opacity: 0.5;
+}
+
+main .statsSection .statsBackground h2 {
+    font-family: Inconsolata;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    letter-spacing: 0.01em;
+
+    background: linear-gradient(-45deg, var(--buttonBlue), var(--buttonGreen));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 main .statsSection .statsBox {
@@ -297,27 +336,33 @@ main .statsSection .statsBox {
     border: 2px solid var(--mainOffWhite);
     border-radius: 10px;
 
+    background-color: var(--mainBlack);
+
     margin-bottom: 64px;
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
 
-main .statsSection .statsBox:nth-child(1) {
-    border: 2px solid var(--buttonBlue);
+    flex-shrink: 0;
+
+    z-index: 1;
 }
 
 main .statsSection .statsBox:nth-child(2) {
-    border: 2px solid var(--buttonGreen);
+    border: 2px solid var(--buttonBlue);
 }
 
 main .statsSection .statsBox:nth-child(3) {
-    border: 2px solid (--mainOffWhite);
+    border: 2px solid var(--buttonGreen);
 }
 
 main .statsSection .statsBox:nth-child(4) {
+    border: 2px solid (--mainOffWhite);
+}
+
+main .statsSection .statsBox:nth-child(5) {
     border: 2px solid var(--pink);
     margin-bottom: 0px;
 }
@@ -366,7 +411,7 @@ main .cssSection {
     height: fit-content;
     width: 80%;
 
-    margin-top: 256px;
+    margin-top: 64px;
 
     display: flex;
     flex-direction: row;
