@@ -282,7 +282,7 @@ main .statsSection {
 
     overflow: hidden;
 
-    margin-top: 64px;
+    margin-top: 256px;
     padding-top: 192px;
 
     padding-bottom: 192px;
@@ -292,8 +292,8 @@ main .statsSection .statsBackground {
     position: absolute;
     top: 0;
     bottom: 18px;
-    left: -5%;
-    width: 110%;
+    left: 0;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
@@ -307,7 +307,7 @@ main .statsSection .statsBackground {
 
     z-index: 0;
 
-    opacity: 0.5;
+    opacity: 0.9;
 }
 
 main .statsSection .statsBackground h2 {
@@ -318,7 +318,7 @@ main .statsSection .statsBackground h2 {
 
     letter-spacing: 0.01em;
 
-    background: linear-gradient(-45deg, var(--buttonBlue), var(--buttonGreen));
+    background: linear-gradient(0deg, var(--buttonBlue), var(--pink));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -411,7 +411,7 @@ main .cssSection {
     height: fit-content;
     width: 80%;
 
-    margin-top: 64px;
+    margin-top: 256px;
 
     display: flex;
     flex-direction: row;

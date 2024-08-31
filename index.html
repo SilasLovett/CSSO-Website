@@ -214,7 +214,86 @@
 
         <div class="statsSection">
             <div class="statsBackground noSelect">
-                <h2 class="largeWhiteText">main .statsSection {    position: relative;    height: auto;    width: 100%;    display: flex;    flex-direction: column;    justify-content: center;    align-items: center;    overflow: hidden;    margin-top: 64px;    padding-top: 192px;    padding-bottom: 192px;}main .statsSection .statsBackground {    position: absolute;    top: 0;    bottom: 0;    left: -5%;    width: 110%;    display: flex;    flex-direction: column;    justify-content: flex-start;    align-items: flex-start;    padding: 32px;    overflow: hidden;    word-break: break-all;    z-index: 0;}main .statsSection .statsBackground h2 {    font-family: Inconsolata;    font-family: "Inconsolata", monospace;    font-optical-sizing: auto;    font-style: normal;    letter-spacing: 0.01em;    background: linear-gradient(-45deg, var(--buttonBlue), var(--buttonGreen));    -webkit-background-clip: text;    background-clip: text;    -webkit-text-fill-color: transparent;}main .statsSection .statsBox {    position: relative;    height: 200px;    width: 80%;    overflow: hidden;    background: none;    border: 2px solid var(--mainOffWhite);    border-radius: 10px;    background-color: var(--mainBlack);    margin-bottom: 64px;    display: flex;    flex-direction: row;    justify-content: space-between;    align-items: center;    flex-shrink: 0;    z-index: 1;}main .statsSection .statsBox:nth-child(2) {    border: 2px solid var(--buttonBlue);}main .statsSection .statsBox:nth-child(3) {    border: 2px solid var(--buttonGreen);}main .statsSection .statsBox:nth-child(4) {    border: 2px solid (--mainOffWhite);}main .statsSection .statsBox:nth-child(5) {    border: 2px solid var(--pink);    margin-bottom: 0px;}main .statsSection .statsBox .leftStats {    height: 100%;    width: 50%;    display: flex;    justify-content: flex-start;    align-items: center;    padding: 32px;}main .statsSection .statsBox .leftStats img {    height: 100%;    aspect-ratio: 1;    object-fit: contain;    margin-right: 32px;}main .statsSection .statsBox .leftStats .bigText {    text-decoration: none;    font-weight: 500;    font-size: var(--size9);    color: var(--mainOffWhite);    font-family: Inconsolata;    font-family: "Inconsolata", monospace;    font-optical-sizing: auto;    font-style: normal;    vertical-align: middle;    margin-right: 32px;}main .cssSection {    position: relative;    height: fit-content;    width: 80%;    margin-top: 64px;    display: flex;    flex-direction: row;    justify-content: space-between;    align-items: flex-start;}main .cssSection .cssLeftSection {    position: relative;    height: 100%;    width: 50%;    margin-right: 32px;    display: flex;    flex-direction: column;    align-items: flex-end;}main .cssLeftSection .cssText {    height: fit-content;    width: 100%;    display: flex;    flex-direction: column;    justify-content: flex-start;    align-items: flex-start;    margin-top: 8px;    padding-right: 32px;}main .cssLeftSection .cssText h2 {    margin-bottom: 0.5em;}main .cssLeftSection .cssText p {    margin-bottom: 0.5em;}main .cssLeftSection .cssButtonBox {    height: 200px;    width: 100%;    overflow: hidden;    border-radius: 10px;    display: flex;    justify-content: flex-start;    align-items: center;}main .cssLeftSection .cssButtonBox button {    height: 60px;    width: 180px;    border-radius: 10px;    outline: none;    border: 2px solid white;    background-color: black;    color: white;    font-family: Inconsolata;    font-family: "Inconsolata", monospace;    font-optical-sizing: auto;    font-style: normal;    font-size: 1.25em;    cursor: pointer;    transition: 0.1s ease-in;}main .cssSection .cssRightSection {    position: relative;    height: max-content;    width: 50%;    display: flex;    flex-direction: column;    justify-content: center;    align-items: flex-start;;}</h2>
+                <h2 class="basicWhiteText"><pre>let mobileNavSearch = document.getElementById("mobileNavSearch");
+
+mobileNavSearch.addEventListener("input", () => {
+    updateMobileNavSearch();
+});
+
+function updateMobileNavSearch() {
+    let query = mobileNavSearch.value.toLowerCase();
+
+    let mainLinksGoals = Array.from(mainLinks.querySelectorAll(".titleWhiteText"));
+
+    mainLinksGoals.forEach(item => {
+    item.style.color = "";
+    });
+
+    let extraLinksGoals = Array.from(extraLinks.querySelectorAll(".titleWhiteText"));
+
+    extraLinksGoals.forEach(item => {
+    item.style.color = "";
+    });
+
+    if(query === "") {
+    return;
+    }
+
+    if(!extraLinksActive) {
+    let filtered = mainLinksGoals.filter(item => item.innerText.toLowerCase().includes(query));
+
+    linksMap.forEach((value, key) => {
+        let filtered = value.filter(item => item.title.toLowerCase().includes(query));
+        if(filtered.length > 0) {
+        mainLinksGoals.filter(item => item.innerText.includes(key)).forEach(item => {
+            item.style.color = "red";
+        })
+        }
+    });
+
+    filtered.forEach(item => {
+        item.style.color = "red";
+    });
+
+    } else {
+    let filtered = extraLinksGoals.filter(item => item.innerText.toLowerCase().includes(query));
+
+    filtered.forEach(item => {
+        item.style.color = "red";
+    });
+    }
+};
+
+/*let items = ['apple', 'banana', 'cherry', 'date', 'elderberry', 'fig', 'grape'];
+let filteredItems = items.filter(item => item.toLowerCase().includes(query));
+
+filteredItems.forEach(item => {
+    let div = document.createElement('div');
+    div.textContent = item;
+    results.appendChild(div);
+});*/
+
+
+let bannerNotificationClose = document.getElementById("bannerNotificationClose");
+let bannerNotification = document.getElementById("bannerNotification");
+let bannerNotificationText = document.getElementById("bannerNotificationText");
+
+let header = document.getElementById("header");
+
+bannerNotificationClose.addEventListener('click', () => {
+    bannerNotification.style.top = "-48px";
+    header.style.top = "0px";
+    mobileNav.style.paddingTop = "0px";
+    accountBox.style.transform = "translateY(0px)";
+});
+
+function createBannerNotification(text) {
+    bannerNotificationText.innerText = text;
+    bannerNotification.style.top = "0px";
+    header.style.top = "48px";
+    mobileNav.style.paddingTop = "48px";
+    accountBox.style.transform = "translateY(48px)";
+}</pre></h2>
             </div>
             <div class="statsBox" id="statsBox1">
                 <div class="leftStats">

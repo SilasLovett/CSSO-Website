@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <meta name="description" content="The CSSO provides free online project-based computer science curriculums, for both beginner and advanced programmers. Get started on your programming journey, practice with advanced real-world projects, or use our free resources in a high school club!">
+    <title>CSSO - Get Started</title>
+    <link rel="icon" type="image/x-icon" href="/CSSOImages/tinyLogo.png">
+
+    <link rel="stylesheet" href="/uiComponents.css">
+    <script src="/uiComponents.js" type="module"></script>
+
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.15/build/spline-viewer.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="bannerNotif" id="bannerNotification">
+            <h3 class="basicWhiteText" id="bannerNotificationText"></h3>
+            <img src="/CSSOImages/icons/closeDark.png" id="bannerNotificationClose" class="noSelect">
+        </div>
+        <div class="header" id="header">
+            <div class="leftSection">
+                <h3 class="titleWhiteText">CSSO</h3>
+                <div class="menuIcon noSelect" id="mobileNavButton">
+                    <span class="span1" id="mobileNavButtonSpan1"></span>
+                    <span class="span2" id="mobileNavButtonSpan2"></span>
+                    <span class="span3" id="mobileNavButtonSpan3"></span>
+                </div>
+            </div>
+            <div class="middleSection" id="headerMiddleSection">
+                <!--Links will be generated here-->
+            </div>
+            <div class="rightSection">
+                <div class="accountBlock noSelect" id="accountBoxButton">
+                    <img src="/CSSOImages/squareLogo.png">
+                    <h3>Lermonade</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="accountBoxBorder" id="accountBox">
+            <div class="accountBox" id="accountBox">
+                <div class="topSection">
+                    <img src="/CSSOImages/squareLogo.png" class="noSelect">
+                    <div class="nameBox">
+                        <h2 class="titleWhiteText">Lermonade</h2>
+                        <h3 class="basicGrayText">Feeling Good!</h3>
+                    </div>
+                </div>
+                <div class="centerSection">
+                    <div class="bioBox">
+                        <h3 class="basicWhiteText">This is a description. Or a biography. Either works to be honest. You choose :D</h3>
+                    </div>
+                    <div class="infoBox">
+                        <h3 class="basicWhiteText">Name: John</h3>
+                        <h3 class="basicWhiteText">Occupation: Space Accountant</h3>
+                        <h3 class="basicWhiteText">Time Zone: Eastern Jupiter Zone 3 (+5:00)</h3>
+                    </div>
+                </div>
+                <div class="buttonBox">
+                    <button class="learnButton">Go to Dashboard</button>
+                    <button class="whiteButton">Go to Account</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobileNav" id="mobileNav">
+            <div class="searchSection">
+                <div class="searchBar noSelect" id="searchHoverSection">
+                    <input placeholder="Search..." id="mobileNavSearch">
+                    <img src="/CSSOImages/icons/search.png">
+                </div>
+                <div class="mobileAccountBlock noSelect" id="mobileAccountBoxButton">
+                    <img src="/CSSOImages/squareLogo.png" class="mobileProfilePicImage">
+                    <h3>Lermonade</h3>
+                </div>
+            </div>
+
+            <div class="navigationSection">
+                <div class="mainLinks noSelect" id="mainLinks">
+                    <div class="mobileLink clickableMenuLink color1">
+                        <h2 class="titleWhiteText darkText">Get Started</h2>
+                        <img src="/CSSOImages/icons/backArrowDark.png" class="clickableImage">
+                    </div>
+    
+                    <div class="mobileLink clickableMenuLink borderBottom">
+                        <h2 class="titleWhiteText">Curriculums</h2>
+                        <img src="/CSSOImages/icons/backarrow.png" class="clickableImage">
+                    </div>
+    
+                    <div class="mobileLink clickableMenuLink borderBottom">
+                        <h2 class="titleWhiteText">Club Resources</h2>
+                        <img src="/CSSOImages/icons/backarrow.png" class="clickableImage">
+                    </div>
+    
+                    <div class="mobileLink clickableMenuLink borderBottom">
+                        <h2 class="titleWhiteText">Projects</h2>
+                        <img src="/CSSOImages/icons/backarrow.png" class="clickableImage">
+                    </div>
+    
+                    <div class="mobileLink clickableMenuLink borderBottom">
+                        <h2 class="titleWhiteText">Information</h2>
+                        <img src="/CSSOImages/icons/backarrow.png" class="clickableImage">
+                    </div>
+    
+                    <div class="mobileLink clickableMenuLink borderBottom">
+                        <h2 class="titleWhiteText">About Us</h2>
+                        <img src="/CSSOImages/icons/backarrow.png" class="clickableImage">
+                    </div>
+                </div>
+                <div class="extraLinks noSelect" id="extraLinks">
+                    <!--Links will be generated here-->
+                </div>
+            </div>
+
+            <div class="newsSection">
+                <div class="accountContainer">
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div id="toastNotificationBox">
+    </div>
+
+    <div id="cookiesNotificationBox">
+    </div>
+
+    <div class="consoleLoadingScreen" id="consoleLoadingScreen">
+        <div class="messagesBox" id="loadingMessagesBox">
+
+        </div>
+
+        <div class="loadingWheelBoxGlow"></div>
+        <div class="loadingWheelBox">
+            <div class="windowHeader">
+                <h4 class="basicWhiteText">Loading Site</h4>
+                <img src="/CSSOImages/icons/closeDark.png">
+            </div>
+            <div class="main">
+                <div class="loader">
+                    <span style="--i:1;"></span>
+                    <span style="--i:2;"></span>
+                    <span style="--i:3;"></span>
+                    <span style="--i:4;"></span>
+                    <span style="--i:5;"></span>
+                    <span style="--i:6;"></span>
+                    <span style="--i:7;"></span>
+                    <span style="--i:8;"></span>
+                    <span style="--i:9;"></span>
+                    <span style="--i:10;"></span>
+                    <span style="--i:11;"></span>
+                    <span style="--i:12;"></span>
+                    <span style="--i:13;"></span>
+                    <span style="--i:14;"></span>
+                    <span style="--i:15;"></span>
+                    <span style="--i:16;"></span>
+                    <span style="--i:17;"></span>
+                    <span style="--i:18;"></span>
+                    <span style="--i:19;"></span>
+                    <span style="--i:20;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="hero">
+            <div class="splineSection">
+                <spline-viewer url="https://prod.spline.design/NYViy2cfuHwHr9VV/scene.splinecode"></spline-viewer>
+            </div>
+            <h1>Get Started</h1>
+        </div>
+
+        <div class="bodyText">
+            <div class="textBox">
+                <h1 class="largeWhiteText">Privacy Policy for Ler Studios</h1>
+
+                <h3 class="basicWhiteText">At Ler Studios, accessible at https://lerstudios.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Ler Studios and how we use it.</h3>
+                <h3 class="basicWhiteText">If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us through email at compscischolars@gmail.com</h3>
+                <h3 class="basicWhiteText">This privacy policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Ler Studios. This policy is not applicable to any information collected offline or via channels other than this website.</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">Consent</h2>
+                <h3 class="basicWhiteText">By using our website, you hereby consent to our Privacy Policy and agree to its terms.</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">Information we collect</h2>
+                <h3 class="basicWhiteText">The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</h3>
+                <h3 class="basicWhiteText">If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.</h3>
+                <h3 class="basicWhiteText">When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address, and telephone number.</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">How we use your information</h2>
+                <h3 class="basicWhiteText">We use the information we collect in various ways, including to:</h3>
+                <h3 class="basicWhiteText">- Provide, operate, and maintain our website</h3>
+                <h3 class="basicWhiteText">- Improve, personalize, and expand our website</h3>
+                <h3 class="basicWhiteText">- Understand and analyze how you use our website</h3>
+                <h3 class="basicWhiteText">- Develop new products, services, features, and functionality</h3>
+                <h3 class="basicWhiteText">- Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes</h3>
+                <h3 class="basicWhiteText">- Send you emails</h3>
+                <h3 class="basicWhiteText">- Find and prevent fraud</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">Log Files</h2>
+                <h3 class="basicWhiteText">Ler Studios follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">Cookies and Web Beacons</h2>
+                <h3 class="basicWhiteText">Like any other website, Ler Studios uses ‘cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">DoubleClick DART Cookie</h2>
+                <h3 class="basicWhiteText">Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – https://policies.google.com/technologies/ads.</h3>
+                <h3 class="basicWhiteText">Some of advertisers on our site may use cookies and web beacons. Our advertising partners are listed below. Each of our advertising partners has their own Privacy Policy for their policies on user data. For easier access, we hyperlinked to their Privacy Policies below.</h3>
+                <h3 class="basicWhiteText">Google: https://policies.google.com/technologies/ads</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">Advertising Partners Privacy Policies</h2>
+                <h3 class="basicWhiteText">You may consult this list to find the Privacy Policy for each of the advertising partners of Ler Studios.</h3>
+                <h3 class="basicWhiteText">Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Ler Studios, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.</h3>
+                <h3 class="basicWhiteText">Note that Ler Studios has no access to or control over these cookies that are used by third-party advertisers.</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">Third-Party Privacy Policies</h2>
+                <h3 class="basicWhiteText">Ler Studios's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. You may find a complete list of these Privacy Policies and their links here: Privacy Policy Links.</h3>
+                <h3 class="basicWhiteText">You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites. What Are Cookies?</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">CCPA Privacy Policy (Do Not Sell My Personal Information)</h2>
+                <h3 class="basicWhiteText">Under the CCPA, among other rights, California consumers have the right to:</h3>
+                <h3 class="basicWhiteText">Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.</h3>
+                <h3 class="basicWhiteText">Request that a business delete any personal data about the consumer that a business has collected.</h3>
+                <h3 class="basicWhiteText">Request that a business that sells a consumer's personal data, not sell the consumer's personal data.</h3>
+                <h3 class="basicWhiteText">If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">GDPR Privacy Policy (Data Protection Rights)</h2>
+                <h3 class="basicWhiteText">We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</h3>
+                <h3 class="basicWhiteText">The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service.</h3>
+                <h3 class="basicWhiteText">The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.</h3>
+                <h3 class="basicWhiteText">The right to erasure – You have the right to request that we erase your personal data, under certain conditions.</h3>
+                <h3 class="basicWhiteText">The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.</h3>
+                <h3 class="basicWhiteText">The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.</h3>
+                <h3 class="basicWhiteText">The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</h3>
+                <h3 class="basicWhiteText">If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">Children's Information</h2>
+                <h3 class="basicWhiteText">Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</h3>
+                <h3 class="basicWhiteText">Ler Studios does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</h3>
+
+                <br><br><br>
+
+                <h2 class="titleWhiteText">This entire article is a work in progress template, and none of it is to be taken seriously.</h2>
+
+                
+                
+                
+                
+                <h2 class="titleWhiteText"></h2>
+                <h3 class="basicWhiteText"></h3>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="horizontalRule"></div>
+        <div class="topSection">
+            <div class="generatedLinks" id="footerLinks">
+            </div>
+            <div class="footerColumn" style="width: auto;">
+                <a href="/CSSO" target="_blank">
+                    <h2 class="basicWhiteText">CSSO</h2>
+                </a>
+                <a href="/CSSO/status" target="_blank">
+                    <div class="systemsCheck noSelect">
+                        <h2 class="basicWhiteText">All systems functioning  🚀</h2>
+                    </div>
+                </a>
+                <a href="https://github.com/SilasLovett/CSSO-Website" target="_blank">
+                    <div class="sourceCode noSelect">
+                        <h2 class="basicWhiteText">View Source Code</h2>
+                        <img src="/CSSOImages/icons/github-mark.svg">
+                    </div>
+                </a>
+                <div class="linksRow">
+                    <a href="https://hackclub.com/" target="_blank">
+                        <img src="/CSSOImages/icons/hackclub-rounded.png">
+                    </a>
+                    <a href="https://hackclub.com/" target="_blank">
+                        <img src="/CSSOImages/icons/hackclub-rounded.png">
+                    </a>
+                    <a href="https://hackclub.com/" target="_blank">
+                        <img src="/CSSOImages/icons/hackclub-rounded.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="horizontalRule"></div>
+        <div class="bottomSection">
+            <div class="leftSection">
+                <h2 class="basicGrayText">© Silas Lovett 2024. All Rights Reserved.</h2>
+            </div>
+            <div class="rightSection">
+                <a href="https://hackclub.com/" target="_blank">
+                    <img src="/CSSOImages/icons/hackclub-rounded.png">
+                </a>
+                <a href="https://hackclub.com/fiscal-sponsorship/" target="_blank">
+                    <img src="/CSSOImages/icons/hcb-dark.png">
+                </a>
+                <a href="https://firebase.google.com/" target="_blank">
+                    <img src="/CSSOImages/icons/firebase.svg" class="darkBG">
+                </a>
+                <a href="https://github.com/" target="_blank">
+                    <img src="/CSSOImages/icons/github-mark.svg" class="lightBG">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
