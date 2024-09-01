@@ -1841,6 +1841,50 @@ header .middleSection .navElement {
     }
 }
 
+.loadingScreen {
+    z-index: 20;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: var(--mainDark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingScreen .box {
+    height: 500px;
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingScreen .box .description {
+    margin-top: 16px;
+}
+
+.inactive {
+    animation: fadeout 0.25s forwards; /* Start the fade out animation */
+}
+
+@keyframes fadeout {
+    from {opacity: 1;}
+    to   {opacity: 0; display: none;}
+}
+
+
+.screenBlocker {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(180deg, #000000bd, #0000002f);
+    z-index: 1999;
+}
+
 
 
 

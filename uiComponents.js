@@ -51,6 +51,45 @@ setTimeout(() => {
 
 
 
+let ASCIIDescription = document.getElementById("ASCIIDescription");
+let loadingScreen = document.getElementById("loadingScreen");
+let ASCII = document.getElementById("ASCII");
+
+function setLoadingScreenText(type, value) {
+  if(type == "text") {
+      ASCIIDescription.innerText = value;
+  } else if( type == "ascii") {
+      ASCII.innerText = value;
+  }
+}
+
+function closeLoadingScreen() {
+  setTimeout(function() {
+      loadingScreen.classList.add("inactive");
+  }, 250);
+}
+
+/*window.onload = function() {
+
+  setLoadingScreenText("ascii", `
+/\\_____/\\ \n
+/  o   o  \\ \n
+( ==  ^  == ) \n
+)         ( \n
+(           ) \n
+( (  )   (  ) ) \n
+(__(__)___(__)__) \n`);
+
+  setLoadingScreenText("text", "Looking for user..");
+  closeLoadingScreen();
+
+};*/
+
+//Needs some work
+
+
+
+
 
 
 
